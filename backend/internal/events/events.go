@@ -2,7 +2,9 @@ package events
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
+	"math/big"
 
 	"github.com/ethereum/go-ethereum"
 	"github.com/ethereum/go-ethereum/common"
@@ -10,6 +12,8 @@ import (
 	"github.com/ethereum/go-ethereum/ethclient"
 	"github.com/murraystewart96/token-swap/internal/config"
 	"github.com/murraystewart96/token-swap/internal/contracts"
+	"github.com/murraystewart96/token-swap/internal/kafka"
+	"github.com/murraystewart96/token-swap/internal/models"
 	"github.com/rs/zerolog/log"
 )
 
@@ -22,9 +26,10 @@ type EventClient struct {
 	ethClient    *ethclient.Client
 	contractAddr common.Address
 	poolContract *contracts.Pool
+	producer     kafka.IProducer
 }
 
-func NewClient(cfg *config.Events) (*EventClient, error) {
+func NewClient(cfg *config.Listener, producer kafka.IProducer) (*EventClient, error) {
 	client, err := ethclient.Dial(fmt.Sprintf("ws://%s", cfg.RPCUrl))
 	if err != nil {
 		return nil, fmt.Errorf("failed to create eth client: %w", err)
@@ -40,6 +45,7 @@ func NewClient(cfg *config.Events) (*EventClient, error) {
 		ethClient:    client,
 		contractAddr: contractAddr,
 		poolContract: poolContract,
+		producer:     producer,
 	}, nil
 
 }
@@ -68,17 +74,35 @@ func (ec *EventClient) Listen(ctx context.Context) error {
 			switch eventLog.Topics[0] {
 			case SwapEventSignature:
 				if swapEvent, err := ec.poolContract.ParseSwap(eventLog); err == nil {
-					log.Info().
-						Str("event_type", "swap").
-						Str("sender", swapEvent.Sender.Hex()).
-						Str("to", swapEvent.To.Hex()).
-						Str("me_token_in", swapEvent.MeTokenIn.String()).
-						Str("you_token_in", swapEvent.YouTokenIn.String()).
-						Str("me_token_out", swapEvent.MeTokenOut.String()).
-						Str("you_token_out", swapEvent.YouTokenOut.String()).
-						Str("tx_hash", swapEvent.Raw.TxHash.Hex()).
-						Uint64("block_number", swapEvent.Raw.BlockNumber).
-						Msg("Swap event received")
+					logSwapEvent(swapEvent)
+
+					tokenIn, tokenOut, amountIn, amountOut := determineTradeDirection(swapEvent)
+
+					// Populate trade event
+					tradeEvent := models.TradeEvent{
+						TxHash:      swapEvent.Raw.TxHash.Hex(),
+						BlockNumber: swapEvent.Raw.BlockNumber,
+						Timestamp:   int64(swapEvent.Raw.BlockTimestamp),
+						Sender:      swapEvent.Sender.Hex(),
+						Recipient:   swapEvent.To.Hex(),
+						TokenIn:     tokenIn,
+						TokenOut:    tokenOut,
+						AmountIn:    amountIn,
+						AmountOut:   amountOut,
+						PoolAddress: swapEvent.Raw.Address.Hex(),
+						EventType:   "swap",
+					}
+
+					// Convert to JSON
+					tradeEventJSON, err := json.Marshal(tradeEvent)
+					if err != nil {
+						return fmt.Errorf("failed to marshal trade event: %w", err)
+					}
+
+					err = ec.producer.Produce("trade-history", []byte(tradeEvent.TxHash), tradeEventJSON)
+					if err != nil {
+						return fmt.Errorf("failed to produce trade event: %w", err)
+					}
 				}
 			case SyncEventSignature:
 				if syncEvent, err := ec.poolContract.ParseSync(eventLog); err == nil {
@@ -93,4 +117,28 @@ func (ec *EventClient) Listen(ctx context.Context) error {
 			}
 		}
 	}
+}
+
+func determineTradeDirection(swapEvent *contracts.PoolSwap) (tokenIn, tokenOut, amountIn, amountOut string) {
+	if swapEvent.MeTokenIn.Cmp(big.NewInt(0)) > 0 {
+		// MET → YOU trade
+		return "MET", "YOU", swapEvent.MeTokenIn.String(), swapEvent.YouTokenOut.String()
+	} else {
+		// YOU → MET trade
+		return "YOU", "MET", swapEvent.YouTokenIn.String(), swapEvent.MeTokenOut.String()
+	}
+}
+
+func logSwapEvent(swapEvent *contracts.PoolSwap) {
+	log.Info().
+		Str("event_type", "swap").
+		Str("sender", swapEvent.Sender.Hex()).
+		Str("to", swapEvent.To.Hex()).
+		Str("me_token_in", swapEvent.MeTokenIn.String()).
+		Str("you_token_in", swapEvent.YouTokenIn.String()).
+		Str("me_token_out", swapEvent.MeTokenOut.String()).
+		Str("you_token_out", swapEvent.YouTokenOut.String()).
+		Str("tx_hash", swapEvent.Raw.TxHash.Hex()).
+		Uint64("block_number", swapEvent.Raw.BlockNumber).
+		Msg("Swap event received")
 }
