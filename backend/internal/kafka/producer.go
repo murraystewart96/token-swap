@@ -9,6 +9,7 @@ import (
 
 type IProducer interface {
 	Produce(topic string, key, value []byte) error
+	Close() error
 }
 
 type Producer struct {
@@ -41,5 +42,10 @@ func (p *Producer) Produce(topic string, key, value []byte) error {
 		return fmt.Errorf("failed to produce event: %w", err)
 	}
 
+	return nil
+}
+
+func (p *Producer) Close() error {
+	p.client.Close()
 	return nil
 }

@@ -27,6 +27,9 @@ func createRootCmd() *cobra.Command {
 func addSubcmds(rootCmd *cobra.Command) {
 	rootCmd.AddCommand(createEventListenerCmd())
 	rootCmd.AddCommand(createWorkerCmd())
+	rootCmd.AddCommand(createServerCmd())
+	rootCmd.AddCommand(createSyncCmd())
+	rootCmd.AddCommand(createMigrateCmd())
 }
 
 func Execute() {

@@ -25,7 +25,7 @@ var (
 type EventClient struct {
 	ethClient    *ethclient.Client
 	contractAddr common.Address
-	poolContract *contracts.Pool
+	poolContract contracts.PoolContract
 	producer     kafka.IProducer
 }
 
@@ -47,7 +47,6 @@ func NewClient(cfg *config.Listener, producer kafka.IProducer) (*EventClient, er
 		poolContract: poolContract,
 		producer:     producer,
 	}, nil
-
 }
 
 func (ec *EventClient) Listen(ctx context.Context) error {
@@ -70,53 +69,85 @@ func (ec *EventClient) Listen(ctx context.Context) error {
 		case err := <-sub.Err():
 			return err
 		case eventLog := <-logs:
-
 			switch eventLog.Topics[0] {
 			case SwapEventSignature:
-				if swapEvent, err := ec.poolContract.ParseSwap(eventLog); err == nil {
-					logSwapEvent(swapEvent)
-
-					tokenIn, tokenOut, amountIn, amountOut := determineTradeDirection(swapEvent)
-
-					// Populate trade event
-					tradeEvent := models.TradeEvent{
-						TxHash:      swapEvent.Raw.TxHash.Hex(),
-						BlockNumber: swapEvent.Raw.BlockNumber,
-						Timestamp:   int64(swapEvent.Raw.BlockTimestamp),
-						Sender:      swapEvent.Sender.Hex(),
-						Recipient:   swapEvent.To.Hex(),
-						TokenIn:     tokenIn,
-						TokenOut:    tokenOut,
-						AmountIn:    amountIn,
-						AmountOut:   amountOut,
-						PoolAddress: swapEvent.Raw.Address.Hex(),
-						EventType:   "swap",
-					}
-
-					// Convert to JSON
-					tradeEventJSON, err := json.Marshal(tradeEvent)
-					if err != nil {
-						return fmt.Errorf("failed to marshal trade event: %w", err)
-					}
-
-					err = ec.producer.Produce("trade-history", []byte(tradeEvent.TxHash), tradeEventJSON)
-					if err != nil {
-						return fmt.Errorf("failed to produce trade event: %w", err)
-					}
+				err := ec.handleSwapEvent(&eventLog)
+				if err != nil {
+					log.Error().Err(err).Msg("swap event handler failed")
 				}
+
 			case SyncEventSignature:
-				if syncEvent, err := ec.poolContract.ParseSync(eventLog); err == nil {
-					log.Info().
-						Str("event_type", "sync").
-						Str("me_token_amount", syncEvent.MeTokenAmount.String()).
-						Str("you_token_amount", syncEvent.YouTokenAmount.String()).
-						Str("tx_hash", syncEvent.Raw.TxHash.Hex()).
-						Uint64("block_number", syncEvent.Raw.BlockNumber).
-						Msg("Sync event received")
+				err := ec.handleSyncEvent(&eventLog)
+				if err != nil {
+					log.Error().Err(err).Msg("sync event handler failed")
 				}
 			}
 		}
 	}
+}
+
+func (ec *EventClient) handleSwapEvent(eventLog *types.Log) error {
+	if swapEvent, err := ec.poolContract.ParseSwap(*eventLog); err == nil {
+		logSwapEvent(swapEvent)
+
+		tokenIn, tokenOut, amountIn, amountOut := determineTradeDirection(swapEvent)
+
+		tradeEvent := models.TradeEvent{
+			TxHash:           swapEvent.Raw.TxHash.Hex(),
+			TransactionIndex: swapEvent.Raw.TxIndex,
+			BlockNumber:      swapEvent.Raw.BlockNumber,
+			Timestamp:        int64(swapEvent.Raw.BlockTimestamp),
+			Sender:           swapEvent.Sender.Hex(),
+			Recipient:        swapEvent.To.Hex(),
+			TokenIn:          tokenIn,
+			TokenOut:         tokenOut,
+			AmountIn:         amountIn,
+			AmountOut:        amountOut,
+			PoolAddress:      swapEvent.Raw.Address.Hex(),
+			EventType:        "swap",
+		}
+
+		// Convert to JSON and publish
+		tradeEventJSON, err := json.Marshal(tradeEvent)
+		if err != nil {
+			return fmt.Errorf("failed to marshal trade event: %w", err)
+		}
+
+		err = ec.producer.Produce(config.TradeHistoryTopic, []byte(tradeEvent.TxHash), tradeEventJSON)
+		if err != nil {
+			return fmt.Errorf("failed to produce trade event: %w", err)
+		}
+	}
+
+	return nil
+}
+
+func (ec *EventClient) handleSyncEvent(eventLog *types.Log) error {
+	if syncEvent, err := ec.poolContract.ParseSync(*eventLog); err == nil {
+		logSyncEvent(syncEvent)
+
+		reserveEvent := models.ReserveEvent{
+			TxHash:      syncEvent.Raw.TxHash.Hex(),
+			BlockNumber: syncEvent.Raw.BlockNumber,
+			METReserve:  syncEvent.MeTokenAmount.String(),
+			YOUReserve:  syncEvent.YouTokenAmount.String(),
+			PoolAddress: syncEvent.Raw.Address.Hex(),
+			EventType:   "sync",
+		}
+
+		// Convert to JSON and publish
+		reserveEventJSON, err := json.Marshal(reserveEvent)
+		if err != nil {
+			return fmt.Errorf("failed to marshal reserve event: %w", err)
+		}
+
+		err = ec.producer.Produce(config.ReserveHistoryTopic, []byte(reserveEvent.TxHash), reserveEventJSON)
+		if err != nil {
+			return fmt.Errorf("failed to produce reserve event: %w", err)
+		}
+	}
+
+	return nil
 }
 
 func determineTradeDirection(swapEvent *contracts.PoolSwap) (tokenIn, tokenOut, amountIn, amountOut string) {
@@ -141,4 +172,14 @@ func logSwapEvent(swapEvent *contracts.PoolSwap) {
 		Str("tx_hash", swapEvent.Raw.TxHash.Hex()).
 		Uint64("block_number", swapEvent.Raw.BlockNumber).
 		Msg("Swap event received")
+}
+
+func logSyncEvent(syncEvent *contracts.PoolSync) {
+	log.Info().
+		Str("event_type", "sync").
+		Str("me_token_amount", syncEvent.MeTokenAmount.String()).
+		Str("you_token_amount", syncEvent.YouTokenAmount.String()).
+		Str("tx_hash", syncEvent.Raw.TxHash.Hex()).
+		Uint64("block_number", syncEvent.Raw.BlockNumber).
+		Msg("Sync event received")
 }

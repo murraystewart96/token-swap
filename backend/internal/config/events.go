@@ -15,8 +15,8 @@ type Listener struct {
 func (e *Events) Defaults() {
 	// Binds ENV vars to struct
 	// ENV vars, if defined, take precedence over defaults and config.yaml
-	viper.SetDefault("rpc_url", "127.0.0.1:8545")
-	viper.SetDefault("contract_addr", "")
+	viper.SetDefault("listener.rpc_url", "127.0.0.1:8545")
+	viper.SetDefault("listener.contract_addr", "")
 	viper.SetDefault("kafka.bootstrap_servers", "localhost:9092")
 	viper.SetDefault("kafka.acks", "all")
 }

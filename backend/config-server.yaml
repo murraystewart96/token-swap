@@ -1,0 +1,12 @@
+
+addr: localhost
+
+db:
+  host: localhost
+  port: 5432
+  name: tokenswap
+  user: tokenswap
+  password: password
+
+redis:
+  addr: localhost:6379

@@ -11,15 +11,16 @@ import (
 )
 
 type IConsumer interface {
-	StartConsuming(ctx context.Context, topic string, handler MessageHandler) error
+	StartConsuming(ctx context.Context, handlers EventHandlers) error
+	Close() error
 }
 
 type Consumer struct {
 	client *kafka.Consumer
-	topic  string
 }
 
-type MessageHandler func(key, value []byte) error
+type EventHandler func(key, value []byte) error
+type EventHandlers map[string]EventHandler
 
 func NewConsumer(cfg *config.KafkaConsumer) (*Consumer, error) {
 	client, err := kafka.NewConsumer(&kafka.ConfigMap{
@@ -35,11 +36,20 @@ func NewConsumer(cfg *config.KafkaConsumer) (*Consumer, error) {
 	}, nil
 }
 
-func (c *Consumer) StartConsuming(ctx context.Context, topic string, handler MessageHandler) error {
-	err := c.client.SubscribeTopics([]string{topic}, nil)
-	if err != nil {
-		return fmt.Errorf("failed to subscribe to topic (%s): %w", topic, err)
+func (c *Consumer) StartConsuming(ctx context.Context, topicHandlers EventHandlers) error {
+	topics := make([]string, 0, len(topicHandlers))
+	for topic := range topicHandlers {
+		topics = append(topics, topic)
 	}
+
+	log.Info().Msgf("subscribing to topics: %v", topics)
+
+	err := c.client.SubscribeTopics(topics, nil)
+	if err != nil {
+		return fmt.Errorf("failed to subscribe to topics (%v): %w", topics, err)
+	}
+
+	log.Info().Msgf("consuming...")
 
 	for {
 		select {
@@ -52,14 +62,22 @@ func (c *Consumer) StartConsuming(ctx context.Context, topic string, handler Mes
 			if err != nil {
 				// Don't log timeouts (normal polling behaviour)
 				if err.(kafka.Error).Code() != kafka.ErrTimedOut {
-					log.Error().Err(err).Msgf("failed to read from topic: %s", topic)
+					log.Error().Err(err).Msg("failed to read from topic")
 				}
 				continue
 			}
 
-			if err := handler(message.Key, message.Value); err != nil {
-				log.Error().Err(err).Msg("message handler failed")
+			if handler, ok := topicHandlers[*message.TopicPartition.Topic]; ok {
+				if err := handler(message.Key, message.Value); err != nil {
+					log.Error().Err(err).Msg("message handler failed")
+				}
+			} else {
+				log.Warn().Msgf("no handler for topic: %s", *message.TopicPartition.Topic)
 			}
 		}
 	}
+}
+
+func (c *Consumer) Close() error {
+	return c.client.Close()
 }

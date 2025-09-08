@@ -1,5 +1,6 @@
 package config
 
 const (
-	TradeHistoryTopic = "trade-history"
+	TradeHistoryTopic   = "trade-history"
+	ReserveHistoryTopic = "reserve-history"
 )

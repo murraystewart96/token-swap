@@ -1,4 +1,20 @@
 kafka:
   bootstrap_servers: "localhost:9092"
-  group_id: trade-history # make map
+  group_id: pool-events
   offset_reset: earliest
+
+topics:
+  - "trade-history"
+  - "reserve-history"
+
+db:
+  host: localhost
+  port: 5432
+  name: tokenswap
+  user: tokenswap
+  password: password
+
+redis:
+  addr: localhost:6379
+
+
