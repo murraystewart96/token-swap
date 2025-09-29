@@ -1,0 +1,8 @@
+GENERATE GO BINDINGS FOR POOL CONTRACT
+
+abigen --abi ./build/MEYOUPool.abi --bin ./build/MEYOUPool.bin --pkg contracts --out ../backend/internal/contracts/pool.go --type Pool
+
+
+-- extract abi and bytecode from file
+jq -r '.abi' ./build/MEYOUPool.json > ./build/MEYOUPool.abi
+jq -r '.object' ./build/MEYOUPool.json > ./build/MEYOUPool.bin
