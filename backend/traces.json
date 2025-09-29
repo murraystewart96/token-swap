@@ -1,0 +1,6020 @@
+{
+	"Name": "cache.SetPrice",
+	"SpanContext": {
+		"TraceID": "9e2e365a4a00d07a05c140432b3384ae",
+		"SpanID": "42a43ce2f7a4ba84",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "9e2e365a4a00d07a05c140432b3384ae",
+		"SpanID": "2c97a1b90bf7b28c",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.083691+01:00",
+	"EndTime": "2025-09-29T19:33:37.087073042+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "cache.SetReserves",
+	"SpanContext": {
+		"TraceID": "9e2e365a4a00d07a05c140432b3384ae",
+		"SpanID": "3215543a1d78dbd5",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "9e2e365a4a00d07a05c140432b3384ae",
+		"SpanID": "42a43ce2f7a4ba84",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.087098+01:00",
+	"EndTime": "2025-09-29T19:33:37.087386417+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "db.CreateReserve",
+	"SpanContext": {
+		"TraceID": "9e2e365a4a00d07a05c140432b3384ae",
+		"SpanID": "1b640de30de711a3",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "9e2e365a4a00d07a05c140432b3384ae",
+		"SpanID": "3215543a1d78dbd5",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.087397+01:00",
+	"EndTime": "2025-09-29T19:33:37.092602042+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "worker.handleReserveEvent",
+	"SpanContext": {
+		"TraceID": "9e2e365a4a00d07a05c140432b3384ae",
+		"SpanID": "2c97a1b90bf7b28c",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "9e2e365a4a00d07a05c140432b3384ae",
+		"SpanID": "97355841823375da",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.083616+01:00",
+	"EndTime": "2025-09-29T19:33:37.092608833+01:00",
+	"Attributes": [
+		{
+			"Key": "blockchain.block_number",
+			"Value": {
+				"Type": "INT64",
+				"Value": 23
+			}
+		},
+		{
+			"Key": "blockchain.tx_hash",
+			"Value": {
+				"Type": "STRING",
+				"Value": "0xd152738f12bca945bfce436c6cd4011c1376d553e650cc8a859cc1a388dd0f1c"
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "kafka.consume",
+	"SpanContext": {
+		"TraceID": "9e2e365a4a00d07a05c140432b3384ae",
+		"SpanID": "97355841823375da",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "9e2e365a4a00d07a05c140432b3384ae",
+		"SpanID": "c0a969f6c9276d16",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": true
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.083576+01:00",
+	"EndTime": "2025-09-29T19:33:37.096247666+01:00",
+	"Attributes": [
+		{
+			"Key": "kafka.topic",
+			"Value": {
+				"Type": "STRING",
+				"Value": "reserve-history"
+			}
+		},
+		{
+			"Key": "kafka.partition",
+			"Value": {
+				"Type": "INT64",
+				"Value": 0
+			}
+		},
+		{
+			"Key": "kafka.offset",
+			"Value": {
+				"Type": "INT64",
+				"Value": 13
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "cache.SetPrice",
+	"SpanContext": {
+		"TraceID": "e0885d07f9f579fa3011122bfbcb586d",
+		"SpanID": "56335211325dd970",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "e0885d07f9f579fa3011122bfbcb586d",
+		"SpanID": "cc59a8c5d21bca21",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.096324+01:00",
+	"EndTime": "2025-09-29T19:33:37.096698083+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "cache.SetReserves",
+	"SpanContext": {
+		"TraceID": "e0885d07f9f579fa3011122bfbcb586d",
+		"SpanID": "eadcbfa0f523550c",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "e0885d07f9f579fa3011122bfbcb586d",
+		"SpanID": "56335211325dd970",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.096706+01:00",
+	"EndTime": "2025-09-29T19:33:37.09700375+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "db.CreateReserve",
+	"SpanContext": {
+		"TraceID": "e0885d07f9f579fa3011122bfbcb586d",
+		"SpanID": "dde31ca0c66e5da1",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "e0885d07f9f579fa3011122bfbcb586d",
+		"SpanID": "eadcbfa0f523550c",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.097025+01:00",
+	"EndTime": "2025-09-29T19:33:37.097709417+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "worker.handleReserveEvent",
+	"SpanContext": {
+		"TraceID": "e0885d07f9f579fa3011122bfbcb586d",
+		"SpanID": "cc59a8c5d21bca21",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "e0885d07f9f579fa3011122bfbcb586d",
+		"SpanID": "ff1a3da9efd4081d",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.096297+01:00",
+	"EndTime": "2025-09-29T19:33:37.09771325+01:00",
+	"Attributes": [
+		{
+			"Key": "blockchain.block_number",
+			"Value": {
+				"Type": "INT64",
+				"Value": 25
+			}
+		},
+		{
+			"Key": "blockchain.tx_hash",
+			"Value": {
+				"Type": "STRING",
+				"Value": "0xa0843b518d34439b0f04c1a8860383610fe7f0135c1f67611a3bb41073c8a532"
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "kafka.consume",
+	"SpanContext": {
+		"TraceID": "e0885d07f9f579fa3011122bfbcb586d",
+		"SpanID": "ff1a3da9efd4081d",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "e0885d07f9f579fa3011122bfbcb586d",
+		"SpanID": "45e3df4622186c64",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": true
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.096292+01:00",
+	"EndTime": "2025-09-29T19:33:37.099458417+01:00",
+	"Attributes": [
+		{
+			"Key": "kafka.topic",
+			"Value": {
+				"Type": "STRING",
+				"Value": "reserve-history"
+			}
+		},
+		{
+			"Key": "kafka.partition",
+			"Value": {
+				"Type": "INT64",
+				"Value": 0
+			}
+		},
+		{
+			"Key": "kafka.offset",
+			"Value": {
+				"Type": "INT64",
+				"Value": 14
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "cache.SetPrice",
+	"SpanContext": {
+		"TraceID": "26d77b769e5f6d850eb235882477ce78",
+		"SpanID": "c8e913f313a3c78c",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "26d77b769e5f6d850eb235882477ce78",
+		"SpanID": "17244566033501d2",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.099528+01:00",
+	"EndTime": "2025-09-29T19:33:37.099995333+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "cache.SetReserves",
+	"SpanContext": {
+		"TraceID": "26d77b769e5f6d850eb235882477ce78",
+		"SpanID": "e4e98919401a5aa4",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "26d77b769e5f6d850eb235882477ce78",
+		"SpanID": "c8e913f313a3c78c",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.100007+01:00",
+	"EndTime": "2025-09-29T19:33:37.100412417+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "db.CreateReserve",
+	"SpanContext": {
+		"TraceID": "26d77b769e5f6d850eb235882477ce78",
+		"SpanID": "f3a40f2b365595e0",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "26d77b769e5f6d850eb235882477ce78",
+		"SpanID": "e4e98919401a5aa4",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.100427+01:00",
+	"EndTime": "2025-09-29T19:33:37.101104209+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "worker.handleReserveEvent",
+	"SpanContext": {
+		"TraceID": "26d77b769e5f6d850eb235882477ce78",
+		"SpanID": "17244566033501d2",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "26d77b769e5f6d850eb235882477ce78",
+		"SpanID": "f4a5bd8f9ae35d88",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.099501+01:00",
+	"EndTime": "2025-09-29T19:33:37.101106583+01:00",
+	"Attributes": [
+		{
+			"Key": "blockchain.block_number",
+			"Value": {
+				"Type": "INT64",
+				"Value": 26
+			}
+		},
+		{
+			"Key": "blockchain.tx_hash",
+			"Value": {
+				"Type": "STRING",
+				"Value": "0x41ea73ea5e271badd0b7ca5730879e715a6b80a658fbd75ea690ad8da1a49640"
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "kafka.consume",
+	"SpanContext": {
+		"TraceID": "26d77b769e5f6d850eb235882477ce78",
+		"SpanID": "f4a5bd8f9ae35d88",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "26d77b769e5f6d850eb235882477ce78",
+		"SpanID": "23991904760016a0",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": true
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.099497+01:00",
+	"EndTime": "2025-09-29T19:33:37.102902333+01:00",
+	"Attributes": [
+		{
+			"Key": "kafka.topic",
+			"Value": {
+				"Type": "STRING",
+				"Value": "reserve-history"
+			}
+		},
+		{
+			"Key": "kafka.partition",
+			"Value": {
+				"Type": "INT64",
+				"Value": 0
+			}
+		},
+		{
+			"Key": "kafka.offset",
+			"Value": {
+				"Type": "INT64",
+				"Value": 15
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "cache.SetPrice",
+	"SpanContext": {
+		"TraceID": "074ef007fe610a3f1a152e87301c941a",
+		"SpanID": "d8ead26081885898",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "074ef007fe610a3f1a152e87301c941a",
+		"SpanID": "696776a95df3c718",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.102967+01:00",
+	"EndTime": "2025-09-29T19:33:37.103386583+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "cache.SetReserves",
+	"SpanContext": {
+		"TraceID": "074ef007fe610a3f1a152e87301c941a",
+		"SpanID": "173ec4f7fe30e8b7",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "074ef007fe610a3f1a152e87301c941a",
+		"SpanID": "d8ead26081885898",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.103398+01:00",
+	"EndTime": "2025-09-29T19:33:37.103649042+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "db.CreateReserve",
+	"SpanContext": {
+		"TraceID": "074ef007fe610a3f1a152e87301c941a",
+		"SpanID": "4fe78ff7fb62016b",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "074ef007fe610a3f1a152e87301c941a",
+		"SpanID": "173ec4f7fe30e8b7",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.103667+01:00",
+	"EndTime": "2025-09-29T19:33:37.104274791+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "worker.handleReserveEvent",
+	"SpanContext": {
+		"TraceID": "074ef007fe610a3f1a152e87301c941a",
+		"SpanID": "696776a95df3c718",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "074ef007fe610a3f1a152e87301c941a",
+		"SpanID": "b375ebf251ab160d",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.102938+01:00",
+	"EndTime": "2025-09-29T19:33:37.104277166+01:00",
+	"Attributes": [
+		{
+			"Key": "blockchain.block_number",
+			"Value": {
+				"Type": "INT64",
+				"Value": 27
+			}
+		},
+		{
+			"Key": "blockchain.tx_hash",
+			"Value": {
+				"Type": "STRING",
+				"Value": "0x1ce2701efd2633c82ca842498c271862f9349d7c60cee134495228b2922c82ee"
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "kafka.consume",
+	"SpanContext": {
+		"TraceID": "074ef007fe610a3f1a152e87301c941a",
+		"SpanID": "b375ebf251ab160d",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "074ef007fe610a3f1a152e87301c941a",
+		"SpanID": "cf00d5a7fca9c7f9",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": true
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.102935+01:00",
+	"EndTime": "2025-09-29T19:33:37.10599075+01:00",
+	"Attributes": [
+		{
+			"Key": "kafka.topic",
+			"Value": {
+				"Type": "STRING",
+				"Value": "reserve-history"
+			}
+		},
+		{
+			"Key": "kafka.partition",
+			"Value": {
+				"Type": "INT64",
+				"Value": 0
+			}
+		},
+		{
+			"Key": "kafka.offset",
+			"Value": {
+				"Type": "INT64",
+				"Value": 16
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "cache.SetPrice",
+	"SpanContext": {
+		"TraceID": "b69aaa6c49be3dad456aabaec8696ce6",
+		"SpanID": "d91fd131df5bf9d5",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "b69aaa6c49be3dad456aabaec8696ce6",
+		"SpanID": "43b74a823820cd6d",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.106065+01:00",
+	"EndTime": "2025-09-29T19:33:37.10640625+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "cache.SetReserves",
+	"SpanContext": {
+		"TraceID": "b69aaa6c49be3dad456aabaec8696ce6",
+		"SpanID": "db81beb5473aede8",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "b69aaa6c49be3dad456aabaec8696ce6",
+		"SpanID": "d91fd131df5bf9d5",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.106413+01:00",
+	"EndTime": "2025-09-29T19:33:37.106899792+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "db.CreateReserve",
+	"SpanContext": {
+		"TraceID": "b69aaa6c49be3dad456aabaec8696ce6",
+		"SpanID": "178137740cf4aa6f",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "b69aaa6c49be3dad456aabaec8696ce6",
+		"SpanID": "db81beb5473aede8",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.106913+01:00",
+	"EndTime": "2025-09-29T19:33:37.107503875+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "worker.handleReserveEvent",
+	"SpanContext": {
+		"TraceID": "b69aaa6c49be3dad456aabaec8696ce6",
+		"SpanID": "43b74a823820cd6d",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "b69aaa6c49be3dad456aabaec8696ce6",
+		"SpanID": "2f685097b98eb88d",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.106027+01:00",
+	"EndTime": "2025-09-29T19:33:37.10750825+01:00",
+	"Attributes": [
+		{
+			"Key": "blockchain.block_number",
+			"Value": {
+				"Type": "INT64",
+				"Value": 29
+			}
+		},
+		{
+			"Key": "blockchain.tx_hash",
+			"Value": {
+				"Type": "STRING",
+				"Value": "0x10855e326065644a3349b6401f900796a15c91940e46bec1cb5ec4998a255566"
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "kafka.consume",
+	"SpanContext": {
+		"TraceID": "b69aaa6c49be3dad456aabaec8696ce6",
+		"SpanID": "2f685097b98eb88d",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "b69aaa6c49be3dad456aabaec8696ce6",
+		"SpanID": "8e86559907b5da7f",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": true
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.10602+01:00",
+	"EndTime": "2025-09-29T19:33:37.110207625+01:00",
+	"Attributes": [
+		{
+			"Key": "kafka.topic",
+			"Value": {
+				"Type": "STRING",
+				"Value": "reserve-history"
+			}
+		},
+		{
+			"Key": "kafka.partition",
+			"Value": {
+				"Type": "INT64",
+				"Value": 0
+			}
+		},
+		{
+			"Key": "kafka.offset",
+			"Value": {
+				"Type": "INT64",
+				"Value": 17
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "cache.SetPrice",
+	"SpanContext": {
+		"TraceID": "e3eeb6d3584421cb4a6a993ab0203b60",
+		"SpanID": "d0b163e518388b2b",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "e3eeb6d3584421cb4a6a993ab0203b60",
+		"SpanID": "33cc1d861cb8da3a",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.110317+01:00",
+	"EndTime": "2025-09-29T19:33:37.111082792+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "cache.SetReserves",
+	"SpanContext": {
+		"TraceID": "e3eeb6d3584421cb4a6a993ab0203b60",
+		"SpanID": "72a26680d25b9633",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "e3eeb6d3584421cb4a6a993ab0203b60",
+		"SpanID": "d0b163e518388b2b",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.111107+01:00",
+	"EndTime": "2025-09-29T19:33:37.111674833+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "db.CreateReserve",
+	"SpanContext": {
+		"TraceID": "e3eeb6d3584421cb4a6a993ab0203b60",
+		"SpanID": "1aa1a951996817a6",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "e3eeb6d3584421cb4a6a993ab0203b60",
+		"SpanID": "72a26680d25b9633",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.111694+01:00",
+	"EndTime": "2025-09-29T19:33:37.113095584+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "worker.handleReserveEvent",
+	"SpanContext": {
+		"TraceID": "e3eeb6d3584421cb4a6a993ab0203b60",
+		"SpanID": "33cc1d861cb8da3a",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "e3eeb6d3584421cb4a6a993ab0203b60",
+		"SpanID": "5d58d94fda77d005",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.110267+01:00",
+	"EndTime": "2025-09-29T19:33:37.113104125+01:00",
+	"Attributes": [
+		{
+			"Key": "blockchain.block_number",
+			"Value": {
+				"Type": "INT64",
+				"Value": 30
+			}
+		},
+		{
+			"Key": "blockchain.tx_hash",
+			"Value": {
+				"Type": "STRING",
+				"Value": "0xbf13e61d9f512dc370352c93f15da5cc1b21a63c6176fa0ca6b2b6f2920f7d5d"
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "kafka.consume",
+	"SpanContext": {
+		"TraceID": "e3eeb6d3584421cb4a6a993ab0203b60",
+		"SpanID": "5d58d94fda77d005",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "e3eeb6d3584421cb4a6a993ab0203b60",
+		"SpanID": "a830650769ba8534",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": true
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.11026+01:00",
+	"EndTime": "2025-09-29T19:33:37.11598625+01:00",
+	"Attributes": [
+		{
+			"Key": "kafka.topic",
+			"Value": {
+				"Type": "STRING",
+				"Value": "reserve-history"
+			}
+		},
+		{
+			"Key": "kafka.partition",
+			"Value": {
+				"Type": "INT64",
+				"Value": 0
+			}
+		},
+		{
+			"Key": "kafka.offset",
+			"Value": {
+				"Type": "INT64",
+				"Value": 18
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "cache.SetPrice",
+	"SpanContext": {
+		"TraceID": "df8a187746b1cbe01b2ca938fd113bbd",
+		"SpanID": "5e78c985c866ab72",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "df8a187746b1cbe01b2ca938fd113bbd",
+		"SpanID": "61e7cf9e7fe45a4e",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.116097+01:00",
+	"EndTime": "2025-09-29T19:33:37.116790292+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "cache.SetReserves",
+	"SpanContext": {
+		"TraceID": "df8a187746b1cbe01b2ca938fd113bbd",
+		"SpanID": "f46d9846a1b611f9",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "df8a187746b1cbe01b2ca938fd113bbd",
+		"SpanID": "5e78c985c866ab72",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.116803+01:00",
+	"EndTime": "2025-09-29T19:33:37.117094875+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "db.CreateReserve",
+	"SpanContext": {
+		"TraceID": "df8a187746b1cbe01b2ca938fd113bbd",
+		"SpanID": "9f7b06be3a3810be",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "df8a187746b1cbe01b2ca938fd113bbd",
+		"SpanID": "f46d9846a1b611f9",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.117117+01:00",
+	"EndTime": "2025-09-29T19:33:37.117708709+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "worker.handleReserveEvent",
+	"SpanContext": {
+		"TraceID": "df8a187746b1cbe01b2ca938fd113bbd",
+		"SpanID": "61e7cf9e7fe45a4e",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "df8a187746b1cbe01b2ca938fd113bbd",
+		"SpanID": "9deaa2db36fe665e",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.116051+01:00",
+	"EndTime": "2025-09-29T19:33:37.117714333+01:00",
+	"Attributes": [
+		{
+			"Key": "blockchain.block_number",
+			"Value": {
+				"Type": "INT64",
+				"Value": 32
+			}
+		},
+		{
+			"Key": "blockchain.tx_hash",
+			"Value": {
+				"Type": "STRING",
+				"Value": "0xd571509e44d0773e795111287e1e1796f91f0ac085e18b1632580e06c4a7871b"
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "kafka.consume",
+	"SpanContext": {
+		"TraceID": "df8a187746b1cbe01b2ca938fd113bbd",
+		"SpanID": "9deaa2db36fe665e",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "df8a187746b1cbe01b2ca938fd113bbd",
+		"SpanID": "a7b91e5797007863",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": true
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.116044+01:00",
+	"EndTime": "2025-09-29T19:33:37.119164417+01:00",
+	"Attributes": [
+		{
+			"Key": "kafka.topic",
+			"Value": {
+				"Type": "STRING",
+				"Value": "reserve-history"
+			}
+		},
+		{
+			"Key": "kafka.partition",
+			"Value": {
+				"Type": "INT64",
+				"Value": 0
+			}
+		},
+		{
+			"Key": "kafka.offset",
+			"Value": {
+				"Type": "INT64",
+				"Value": 19
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "cache.SetPrice",
+	"SpanContext": {
+		"TraceID": "0e5d0ae671a9a8b37280c4273cabd8fd",
+		"SpanID": "d829377b4cbd2a61",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "0e5d0ae671a9a8b37280c4273cabd8fd",
+		"SpanID": "1fbc4eab849e0dbb",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.119232+01:00",
+	"EndTime": "2025-09-29T19:33:37.119526458+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "cache.SetReserves",
+	"SpanContext": {
+		"TraceID": "0e5d0ae671a9a8b37280c4273cabd8fd",
+		"SpanID": "d8be90451754df30",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "0e5d0ae671a9a8b37280c4273cabd8fd",
+		"SpanID": "d829377b4cbd2a61",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.119536+01:00",
+	"EndTime": "2025-09-29T19:33:37.119768917+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "db.CreateReserve",
+	"SpanContext": {
+		"TraceID": "0e5d0ae671a9a8b37280c4273cabd8fd",
+		"SpanID": "c05fc9bd0746d923",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "0e5d0ae671a9a8b37280c4273cabd8fd",
+		"SpanID": "d8be90451754df30",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.119775+01:00",
+	"EndTime": "2025-09-29T19:33:37.120168584+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "worker.handleReserveEvent",
+	"SpanContext": {
+		"TraceID": "0e5d0ae671a9a8b37280c4273cabd8fd",
+		"SpanID": "1fbc4eab849e0dbb",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "0e5d0ae671a9a8b37280c4273cabd8fd",
+		"SpanID": "57e15ff07d016fb6",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.119205+01:00",
+	"EndTime": "2025-09-29T19:33:37.120171875+01:00",
+	"Attributes": [
+		{
+			"Key": "blockchain.block_number",
+			"Value": {
+				"Type": "INT64",
+				"Value": 34
+			}
+		},
+		{
+			"Key": "blockchain.tx_hash",
+			"Value": {
+				"Type": "STRING",
+				"Value": "0xaf183dbafbb03beb1bec303a630de25e4109620e9e5f3a77d88ecc60d131cafa"
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "kafka.consume",
+	"SpanContext": {
+		"TraceID": "0e5d0ae671a9a8b37280c4273cabd8fd",
+		"SpanID": "57e15ff07d016fb6",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "0e5d0ae671a9a8b37280c4273cabd8fd",
+		"SpanID": "500d8d11845a5c4f",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": true
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.1192+01:00",
+	"EndTime": "2025-09-29T19:33:37.121413375+01:00",
+	"Attributes": [
+		{
+			"Key": "kafka.topic",
+			"Value": {
+				"Type": "STRING",
+				"Value": "reserve-history"
+			}
+		},
+		{
+			"Key": "kafka.partition",
+			"Value": {
+				"Type": "INT64",
+				"Value": 0
+			}
+		},
+		{
+			"Key": "kafka.offset",
+			"Value": {
+				"Type": "INT64",
+				"Value": 20
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "cache.SetPrice",
+	"SpanContext": {
+		"TraceID": "03c8adddca2d687e30dd7e4ffb5979d7",
+		"SpanID": "4eae3b66781bb36f",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "03c8adddca2d687e30dd7e4ffb5979d7",
+		"SpanID": "22da6d54b6d241da",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.121453+01:00",
+	"EndTime": "2025-09-29T19:33:37.121695083+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "cache.SetReserves",
+	"SpanContext": {
+		"TraceID": "03c8adddca2d687e30dd7e4ffb5979d7",
+		"SpanID": "a11a44b94014b305",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "03c8adddca2d687e30dd7e4ffb5979d7",
+		"SpanID": "4eae3b66781bb36f",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.121702+01:00",
+	"EndTime": "2025-09-29T19:33:37.121969875+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "db.CreateReserve",
+	"SpanContext": {
+		"TraceID": "03c8adddca2d687e30dd7e4ffb5979d7",
+		"SpanID": "911e0cca2375ba2d",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "03c8adddca2d687e30dd7e4ffb5979d7",
+		"SpanID": "a11a44b94014b305",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.121979+01:00",
+	"EndTime": "2025-09-29T19:33:37.122602834+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "worker.handleReserveEvent",
+	"SpanContext": {
+		"TraceID": "03c8adddca2d687e30dd7e4ffb5979d7",
+		"SpanID": "22da6d54b6d241da",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "03c8adddca2d687e30dd7e4ffb5979d7",
+		"SpanID": "0378fae2df1471ed",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.121436+01:00",
+	"EndTime": "2025-09-29T19:33:37.122604834+01:00",
+	"Attributes": [
+		{
+			"Key": "blockchain.block_number",
+			"Value": {
+				"Type": "INT64",
+				"Value": 35
+			}
+		},
+		{
+			"Key": "blockchain.tx_hash",
+			"Value": {
+				"Type": "STRING",
+				"Value": "0xa5f35daf1792680c20aa8c775c61d41c37a0db7a06ad2007cde2c7a2ec3e9b51"
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "kafka.consume",
+	"SpanContext": {
+		"TraceID": "03c8adddca2d687e30dd7e4ffb5979d7",
+		"SpanID": "0378fae2df1471ed",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "03c8adddca2d687e30dd7e4ffb5979d7",
+		"SpanID": "fd772f1c2c384e3e",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": true
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.121434+01:00",
+	"EndTime": "2025-09-29T19:33:37.124103209+01:00",
+	"Attributes": [
+		{
+			"Key": "kafka.topic",
+			"Value": {
+				"Type": "STRING",
+				"Value": "reserve-history"
+			}
+		},
+		{
+			"Key": "kafka.partition",
+			"Value": {
+				"Type": "INT64",
+				"Value": 0
+			}
+		},
+		{
+			"Key": "kafka.offset",
+			"Value": {
+				"Type": "INT64",
+				"Value": 21
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "cache.SetPrice",
+	"SpanContext": {
+		"TraceID": "e3edbc3225d76b90d80ef8d1d9376c8f",
+		"SpanID": "f29f7b900d18962d",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "e3edbc3225d76b90d80ef8d1d9376c8f",
+		"SpanID": "c166d6190ad7141b",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.124167+01:00",
+	"EndTime": "2025-09-29T19:33:37.124476167+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "cache.SetReserves",
+	"SpanContext": {
+		"TraceID": "e3edbc3225d76b90d80ef8d1d9376c8f",
+		"SpanID": "17b8fff9d4e4a1eb",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "e3edbc3225d76b90d80ef8d1d9376c8f",
+		"SpanID": "f29f7b900d18962d",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.124485+01:00",
+	"EndTime": "2025-09-29T19:33:37.124716041+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "db.CreateReserve",
+	"SpanContext": {
+		"TraceID": "e3edbc3225d76b90d80ef8d1d9376c8f",
+		"SpanID": "a49ce205075b745a",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "e3edbc3225d76b90d80ef8d1d9376c8f",
+		"SpanID": "17b8fff9d4e4a1eb",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.124722+01:00",
+	"EndTime": "2025-09-29T19:33:37.125155167+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "worker.handleReserveEvent",
+	"SpanContext": {
+		"TraceID": "e3edbc3225d76b90d80ef8d1d9376c8f",
+		"SpanID": "c166d6190ad7141b",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "e3edbc3225d76b90d80ef8d1d9376c8f",
+		"SpanID": "2e565d1472a09efa",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.124142+01:00",
+	"EndTime": "2025-09-29T19:33:37.125157542+01:00",
+	"Attributes": [
+		{
+			"Key": "blockchain.block_number",
+			"Value": {
+				"Type": "INT64",
+				"Value": 37
+			}
+		},
+		{
+			"Key": "blockchain.tx_hash",
+			"Value": {
+				"Type": "STRING",
+				"Value": "0x83a1533b16d74ae8f8ae510ec04794f060343716df44641f5a7fd77ca368bfde"
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "kafka.consume",
+	"SpanContext": {
+		"TraceID": "e3edbc3225d76b90d80ef8d1d9376c8f",
+		"SpanID": "2e565d1472a09efa",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "e3edbc3225d76b90d80ef8d1d9376c8f",
+		"SpanID": "eb83d95b7cb7de1d",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": true
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.124138+01:00",
+	"EndTime": "2025-09-29T19:33:37.126405208+01:00",
+	"Attributes": [
+		{
+			"Key": "kafka.topic",
+			"Value": {
+				"Type": "STRING",
+				"Value": "reserve-history"
+			}
+		},
+		{
+			"Key": "kafka.partition",
+			"Value": {
+				"Type": "INT64",
+				"Value": 0
+			}
+		},
+		{
+			"Key": "kafka.offset",
+			"Value": {
+				"Type": "INT64",
+				"Value": 22
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "db.CreateTrade",
+	"SpanContext": {
+		"TraceID": "137ff0cc3bf9e464f70abf1d634deb97",
+		"SpanID": "d69684a488910493",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "137ff0cc3bf9e464f70abf1d634deb97",
+		"SpanID": "67e888c09c82d5e1",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.126486+01:00",
+	"EndTime": "2025-09-29T19:33:37.128004834+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "worker.handleTradeEvent",
+	"SpanContext": {
+		"TraceID": "137ff0cc3bf9e464f70abf1d634deb97",
+		"SpanID": "67e888c09c82d5e1",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "137ff0cc3bf9e464f70abf1d634deb97",
+		"SpanID": "1f5f2c1c9bf8afff",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.126437+01:00",
+	"EndTime": "2025-09-29T19:33:37.128007875+01:00",
+	"Attributes": [
+		{
+			"Key": "blockchain.block_number",
+			"Value": {
+				"Type": "INT64",
+				"Value": 23
+			}
+		},
+		{
+			"Key": "blockchain.tx_hash",
+			"Value": {
+				"Type": "STRING",
+				"Value": "0xd152738f12bca945bfce436c6cd4011c1376d553e650cc8a859cc1a388dd0f1c"
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "kafka.consume",
+	"SpanContext": {
+		"TraceID": "137ff0cc3bf9e464f70abf1d634deb97",
+		"SpanID": "1f5f2c1c9bf8afff",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "137ff0cc3bf9e464f70abf1d634deb97",
+		"SpanID": "d6fcbe7ef98e83ac",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": true
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.126434+01:00",
+	"EndTime": "2025-09-29T19:33:37.129021209+01:00",
+	"Attributes": [
+		{
+			"Key": "kafka.topic",
+			"Value": {
+				"Type": "STRING",
+				"Value": "trade-history"
+			}
+		},
+		{
+			"Key": "kafka.partition",
+			"Value": {
+				"Type": "INT64",
+				"Value": 0
+			}
+		},
+		{
+			"Key": "kafka.offset",
+			"Value": {
+				"Type": "INT64",
+				"Value": 12
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "db.CreateTrade",
+	"SpanContext": {
+		"TraceID": "992f0ca2ee1a35e463bab6713454aacc",
+		"SpanID": "4b076e1b4bb49670",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "992f0ca2ee1a35e463bab6713454aacc",
+		"SpanID": "91bb152ab8d49bd9",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.129055+01:00",
+	"EndTime": "2025-09-29T19:33:37.129481+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "worker.handleTradeEvent",
+	"SpanContext": {
+		"TraceID": "992f0ca2ee1a35e463bab6713454aacc",
+		"SpanID": "91bb152ab8d49bd9",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "992f0ca2ee1a35e463bab6713454aacc",
+		"SpanID": "cc965d00d51037ef",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.129041+01:00",
+	"EndTime": "2025-09-29T19:33:37.12948225+01:00",
+	"Attributes": [
+		{
+			"Key": "blockchain.block_number",
+			"Value": {
+				"Type": "INT64",
+				"Value": 25
+			}
+		},
+		{
+			"Key": "blockchain.tx_hash",
+			"Value": {
+				"Type": "STRING",
+				"Value": "0xa0843b518d34439b0f04c1a8860383610fe7f0135c1f67611a3bb41073c8a532"
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "kafka.consume",
+	"SpanContext": {
+		"TraceID": "992f0ca2ee1a35e463bab6713454aacc",
+		"SpanID": "cc965d00d51037ef",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "992f0ca2ee1a35e463bab6713454aacc",
+		"SpanID": "a892a5bdcc6600b7",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": true
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.129039+01:00",
+	"EndTime": "2025-09-29T19:33:37.130421667+01:00",
+	"Attributes": [
+		{
+			"Key": "kafka.topic",
+			"Value": {
+				"Type": "STRING",
+				"Value": "trade-history"
+			}
+		},
+		{
+			"Key": "kafka.partition",
+			"Value": {
+				"Type": "INT64",
+				"Value": 0
+			}
+		},
+		{
+			"Key": "kafka.offset",
+			"Value": {
+				"Type": "INT64",
+				"Value": 13
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "db.CreateTrade",
+	"SpanContext": {
+		"TraceID": "4276643e0da055d4f77a0597f68dee36",
+		"SpanID": "4d3ebaa536270579",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "4276643e0da055d4f77a0597f68dee36",
+		"SpanID": "3fcda551238adca9",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.130446+01:00",
+	"EndTime": "2025-09-29T19:33:37.130864125+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "worker.handleTradeEvent",
+	"SpanContext": {
+		"TraceID": "4276643e0da055d4f77a0597f68dee36",
+		"SpanID": "3fcda551238adca9",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "4276643e0da055d4f77a0597f68dee36",
+		"SpanID": "512f5a071a8df466",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.130437+01:00",
+	"EndTime": "2025-09-29T19:33:37.130865875+01:00",
+	"Attributes": [
+		{
+			"Key": "blockchain.block_number",
+			"Value": {
+				"Type": "INT64",
+				"Value": 26
+			}
+		},
+		{
+			"Key": "blockchain.tx_hash",
+			"Value": {
+				"Type": "STRING",
+				"Value": "0x41ea73ea5e271badd0b7ca5730879e715a6b80a658fbd75ea690ad8da1a49640"
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "kafka.consume",
+	"SpanContext": {
+		"TraceID": "4276643e0da055d4f77a0597f68dee36",
+		"SpanID": "512f5a071a8df466",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "4276643e0da055d4f77a0597f68dee36",
+		"SpanID": "01d1778628324cf6",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": true
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.130436+01:00",
+	"EndTime": "2025-09-29T19:33:37.131838333+01:00",
+	"Attributes": [
+		{
+			"Key": "kafka.topic",
+			"Value": {
+				"Type": "STRING",
+				"Value": "trade-history"
+			}
+		},
+		{
+			"Key": "kafka.partition",
+			"Value": {
+				"Type": "INT64",
+				"Value": 0
+			}
+		},
+		{
+			"Key": "kafka.offset",
+			"Value": {
+				"Type": "INT64",
+				"Value": 14
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "db.CreateTrade",
+	"SpanContext": {
+		"TraceID": "f8112f23694bdc1361a851abeae72e16",
+		"SpanID": "25f766805e982710",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "f8112f23694bdc1361a851abeae72e16",
+		"SpanID": "588da635a286e8a3",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.131864+01:00",
+	"EndTime": "2025-09-29T19:33:37.132339333+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "worker.handleTradeEvent",
+	"SpanContext": {
+		"TraceID": "f8112f23694bdc1361a851abeae72e16",
+		"SpanID": "588da635a286e8a3",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "f8112f23694bdc1361a851abeae72e16",
+		"SpanID": "44475c848e870505",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.131854+01:00",
+	"EndTime": "2025-09-29T19:33:37.1323425+01:00",
+	"Attributes": [
+		{
+			"Key": "blockchain.block_number",
+			"Value": {
+				"Type": "INT64",
+				"Value": 27
+			}
+		},
+		{
+			"Key": "blockchain.tx_hash",
+			"Value": {
+				"Type": "STRING",
+				"Value": "0x1ce2701efd2633c82ca842498c271862f9349d7c60cee134495228b2922c82ee"
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "kafka.consume",
+	"SpanContext": {
+		"TraceID": "f8112f23694bdc1361a851abeae72e16",
+		"SpanID": "44475c848e870505",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "f8112f23694bdc1361a851abeae72e16",
+		"SpanID": "ae51ce504f575d51",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": true
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.131853+01:00",
+	"EndTime": "2025-09-29T19:33:37.133301333+01:00",
+	"Attributes": [
+		{
+			"Key": "kafka.topic",
+			"Value": {
+				"Type": "STRING",
+				"Value": "trade-history"
+			}
+		},
+		{
+			"Key": "kafka.partition",
+			"Value": {
+				"Type": "INT64",
+				"Value": 0
+			}
+		},
+		{
+			"Key": "kafka.offset",
+			"Value": {
+				"Type": "INT64",
+				"Value": 15
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "db.CreateTrade",
+	"SpanContext": {
+		"TraceID": "1eeded62832495babd5f124e8a012787",
+		"SpanID": "9749ffb2ff3e4e1a",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "1eeded62832495babd5f124e8a012787",
+		"SpanID": "53e4032aceb5b1c9",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.133332+01:00",
+	"EndTime": "2025-09-29T19:33:37.133719625+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "worker.handleTradeEvent",
+	"SpanContext": {
+		"TraceID": "1eeded62832495babd5f124e8a012787",
+		"SpanID": "53e4032aceb5b1c9",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "1eeded62832495babd5f124e8a012787",
+		"SpanID": "83eabd6073d79b60",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.133322+01:00",
+	"EndTime": "2025-09-29T19:33:37.133721542+01:00",
+	"Attributes": [
+		{
+			"Key": "blockchain.block_number",
+			"Value": {
+				"Type": "INT64",
+				"Value": 29
+			}
+		},
+		{
+			"Key": "blockchain.tx_hash",
+			"Value": {
+				"Type": "STRING",
+				"Value": "0x10855e326065644a3349b6401f900796a15c91940e46bec1cb5ec4998a255566"
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "kafka.consume",
+	"SpanContext": {
+		"TraceID": "1eeded62832495babd5f124e8a012787",
+		"SpanID": "83eabd6073d79b60",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "1eeded62832495babd5f124e8a012787",
+		"SpanID": "04c729fcc92bcb56",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": true
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.133317+01:00",
+	"EndTime": "2025-09-29T19:33:37.134577917+01:00",
+	"Attributes": [
+		{
+			"Key": "kafka.topic",
+			"Value": {
+				"Type": "STRING",
+				"Value": "trade-history"
+			}
+		},
+		{
+			"Key": "kafka.partition",
+			"Value": {
+				"Type": "INT64",
+				"Value": 0
+			}
+		},
+		{
+			"Key": "kafka.offset",
+			"Value": {
+				"Type": "INT64",
+				"Value": 16
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "db.CreateTrade",
+	"SpanContext": {
+		"TraceID": "81e2ee91338173c493aeee5e67e07ab8",
+		"SpanID": "8e5f3ee898360806",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "81e2ee91338173c493aeee5e67e07ab8",
+		"SpanID": "70b7583d7c78e93b",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.134602+01:00",
+	"EndTime": "2025-09-29T19:33:37.135018625+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "worker.handleTradeEvent",
+	"SpanContext": {
+		"TraceID": "81e2ee91338173c493aeee5e67e07ab8",
+		"SpanID": "70b7583d7c78e93b",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "81e2ee91338173c493aeee5e67e07ab8",
+		"SpanID": "a0211ea9c5f55d06",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.134594+01:00",
+	"EndTime": "2025-09-29T19:33:37.135020584+01:00",
+	"Attributes": [
+		{
+			"Key": "blockchain.block_number",
+			"Value": {
+				"Type": "INT64",
+				"Value": 30
+			}
+		},
+		{
+			"Key": "blockchain.tx_hash",
+			"Value": {
+				"Type": "STRING",
+				"Value": "0xbf13e61d9f512dc370352c93f15da5cc1b21a63c6176fa0ca6b2b6f2920f7d5d"
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "kafka.consume",
+	"SpanContext": {
+		"TraceID": "81e2ee91338173c493aeee5e67e07ab8",
+		"SpanID": "a0211ea9c5f55d06",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "81e2ee91338173c493aeee5e67e07ab8",
+		"SpanID": "3b64c378a5e982c8",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": true
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.134593+01:00",
+	"EndTime": "2025-09-29T19:33:37.136140917+01:00",
+	"Attributes": [
+		{
+			"Key": "kafka.topic",
+			"Value": {
+				"Type": "STRING",
+				"Value": "trade-history"
+			}
+		},
+		{
+			"Key": "kafka.partition",
+			"Value": {
+				"Type": "INT64",
+				"Value": 0
+			}
+		},
+		{
+			"Key": "kafka.offset",
+			"Value": {
+				"Type": "INT64",
+				"Value": 17
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "db.CreateTrade",
+	"SpanContext": {
+		"TraceID": "00d3424075b62637f861b71921618423",
+		"SpanID": "47fd3eddde0f0b1b",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "00d3424075b62637f861b71921618423",
+		"SpanID": "763e6bc1a1d3912d",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.136181+01:00",
+	"EndTime": "2025-09-29T19:33:37.136607458+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "worker.handleTradeEvent",
+	"SpanContext": {
+		"TraceID": "00d3424075b62637f861b71921618423",
+		"SpanID": "763e6bc1a1d3912d",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "00d3424075b62637f861b71921618423",
+		"SpanID": "6b9e5b16a629ba81",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.136171+01:00",
+	"EndTime": "2025-09-29T19:33:37.1366105+01:00",
+	"Attributes": [
+		{
+			"Key": "blockchain.block_number",
+			"Value": {
+				"Type": "INT64",
+				"Value": 32
+			}
+		},
+		{
+			"Key": "blockchain.tx_hash",
+			"Value": {
+				"Type": "STRING",
+				"Value": "0xd571509e44d0773e795111287e1e1796f91f0ac085e18b1632580e06c4a7871b"
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "kafka.consume",
+	"SpanContext": {
+		"TraceID": "00d3424075b62637f861b71921618423",
+		"SpanID": "6b9e5b16a629ba81",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "00d3424075b62637f861b71921618423",
+		"SpanID": "2a36912797db9375",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": true
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.13617+01:00",
+	"EndTime": "2025-09-29T19:33:37.138082+01:00",
+	"Attributes": [
+		{
+			"Key": "kafka.topic",
+			"Value": {
+				"Type": "STRING",
+				"Value": "trade-history"
+			}
+		},
+		{
+			"Key": "kafka.partition",
+			"Value": {
+				"Type": "INT64",
+				"Value": 0
+			}
+		},
+		{
+			"Key": "kafka.offset",
+			"Value": {
+				"Type": "INT64",
+				"Value": 18
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "db.CreateTrade",
+	"SpanContext": {
+		"TraceID": "73442c5475aa2368225ddeeac69765ad",
+		"SpanID": "faf1a41758de3bbc",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "73442c5475aa2368225ddeeac69765ad",
+		"SpanID": "8746ce991d2d4bb9",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.138126+01:00",
+	"EndTime": "2025-09-29T19:33:37.138600125+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "worker.handleTradeEvent",
+	"SpanContext": {
+		"TraceID": "73442c5475aa2368225ddeeac69765ad",
+		"SpanID": "8746ce991d2d4bb9",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "73442c5475aa2368225ddeeac69765ad",
+		"SpanID": "95cf1b75eb9eb2d8",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.138111+01:00",
+	"EndTime": "2025-09-29T19:33:37.138601417+01:00",
+	"Attributes": [
+		{
+			"Key": "blockchain.block_number",
+			"Value": {
+				"Type": "INT64",
+				"Value": 34
+			}
+		},
+		{
+			"Key": "blockchain.tx_hash",
+			"Value": {
+				"Type": "STRING",
+				"Value": "0xaf183dbafbb03beb1bec303a630de25e4109620e9e5f3a77d88ecc60d131cafa"
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "kafka.consume",
+	"SpanContext": {
+		"TraceID": "73442c5475aa2368225ddeeac69765ad",
+		"SpanID": "95cf1b75eb9eb2d8",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "73442c5475aa2368225ddeeac69765ad",
+		"SpanID": "dea4e952478593cf",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": true
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.13811+01:00",
+	"EndTime": "2025-09-29T19:33:37.139551792+01:00",
+	"Attributes": [
+		{
+			"Key": "kafka.topic",
+			"Value": {
+				"Type": "STRING",
+				"Value": "trade-history"
+			}
+		},
+		{
+			"Key": "kafka.partition",
+			"Value": {
+				"Type": "INT64",
+				"Value": 0
+			}
+		},
+		{
+			"Key": "kafka.offset",
+			"Value": {
+				"Type": "INT64",
+				"Value": 19
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "db.CreateTrade",
+	"SpanContext": {
+		"TraceID": "8fbe41b52679c468fcc68bf03a51c0c3",
+		"SpanID": "59bc8b9f76b50dd9",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "8fbe41b52679c468fcc68bf03a51c0c3",
+		"SpanID": "bb7504005a9614df",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.139574+01:00",
+	"EndTime": "2025-09-29T19:33:37.139942084+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "worker.handleTradeEvent",
+	"SpanContext": {
+		"TraceID": "8fbe41b52679c468fcc68bf03a51c0c3",
+		"SpanID": "bb7504005a9614df",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "8fbe41b52679c468fcc68bf03a51c0c3",
+		"SpanID": "88a3ae5d837d2cd1",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.139565+01:00",
+	"EndTime": "2025-09-29T19:33:37.139943417+01:00",
+	"Attributes": [
+		{
+			"Key": "blockchain.block_number",
+			"Value": {
+				"Type": "INT64",
+				"Value": 35
+			}
+		},
+		{
+			"Key": "blockchain.tx_hash",
+			"Value": {
+				"Type": "STRING",
+				"Value": "0xa5f35daf1792680c20aa8c775c61d41c37a0db7a06ad2007cde2c7a2ec3e9b51"
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "kafka.consume",
+	"SpanContext": {
+		"TraceID": "8fbe41b52679c468fcc68bf03a51c0c3",
+		"SpanID": "88a3ae5d837d2cd1",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "8fbe41b52679c468fcc68bf03a51c0c3",
+		"SpanID": "4a5f355fbc74dfda",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": true
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.139564+01:00",
+	"EndTime": "2025-09-29T19:33:37.140802209+01:00",
+	"Attributes": [
+		{
+			"Key": "kafka.topic",
+			"Value": {
+				"Type": "STRING",
+				"Value": "trade-history"
+			}
+		},
+		{
+			"Key": "kafka.partition",
+			"Value": {
+				"Type": "INT64",
+				"Value": 0
+			}
+		},
+		{
+			"Key": "kafka.offset",
+			"Value": {
+				"Type": "INT64",
+				"Value": 20
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "db.CreateTrade",
+	"SpanContext": {
+		"TraceID": "e9e5ca1e05e7d75743af2b2e32cf9e20",
+		"SpanID": "d39621b299b76d81",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "e9e5ca1e05e7d75743af2b2e32cf9e20",
+		"SpanID": "9f06740e3fe6aaf7",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.140826+01:00",
+	"EndTime": "2025-09-29T19:33:37.141364583+01:00",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "worker.handleTradeEvent",
+	"SpanContext": {
+		"TraceID": "e9e5ca1e05e7d75743af2b2e32cf9e20",
+		"SpanID": "9f06740e3fe6aaf7",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "e9e5ca1e05e7d75743af2b2e32cf9e20",
+		"SpanID": "08b21675dc60c62b",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.140818+01:00",
+	"EndTime": "2025-09-29T19:33:37.14136725+01:00",
+	"Attributes": [
+		{
+			"Key": "blockchain.block_number",
+			"Value": {
+				"Type": "INT64",
+				"Value": 37
+			}
+		},
+		{
+			"Key": "blockchain.tx_hash",
+			"Value": {
+				"Type": "STRING",
+				"Value": "0x83a1533b16d74ae8f8ae510ec04794f060343716df44641f5a7fd77ca368bfde"
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}
+{
+	"Name": "kafka.consume",
+	"SpanContext": {
+		"TraceID": "e9e5ca1e05e7d75743af2b2e32cf9e20",
+		"SpanID": "08b21675dc60c62b",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "e9e5ca1e05e7d75743af2b2e32cf9e20",
+		"SpanID": "b35273298d4edf59",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": true
+	},
+	"SpanKind": 1,
+	"StartTime": "2025-09-29T19:33:37.140817+01:00",
+	"EndTime": "2025-09-29T19:33:37.142585042+01:00",
+	"Attributes": [
+		{
+			"Key": "kafka.topic",
+			"Value": {
+				"Type": "STRING",
+				"Value": "trade-history"
+			}
+		},
+		{
+			"Key": "kafka.partition",
+			"Value": {
+				"Type": "INT64",
+				"Value": 0
+			}
+		},
+		{
+			"Key": "kafka.offset",
+			"Value": {
+				"Type": "INT64",
+				"Value": 21
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "deployment.environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "development"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "token-swap-worker"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.0.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	},
+	"InstrumentationLibrary": {
+		"Name": "token-swap-worker",
+		"Version": "",
+		"SchemaURL": "",
+		"Attributes": null
+	}
+}

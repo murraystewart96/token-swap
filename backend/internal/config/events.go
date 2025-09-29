@@ -5,6 +5,7 @@ import "github.com/spf13/viper"
 type Events struct {
 	Listener Listener      `mapstructure:"listener" validate:"required"`
 	Kafka    KafkaProducer `mapstructure:"kafka"    validate:"required"`
+	DB       DB            `mapstructure:"db"       validate:"required"`
 }
 
 type Listener struct {

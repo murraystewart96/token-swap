@@ -1,0 +1,11 @@
+# Test configuration for integration tests
+# This connects to the test database running on port 5433
+
+db:
+  host: localhost
+  port: "5433"
+  name: tokenswap_test
+  user: test_user  
+  password: test_password
+
+path: "./internal/storage/postgres/migrations/sql"

@@ -2,6 +2,13 @@ listener:
   rpc_url: 127.0.0.1:8545
   contract_addr: 0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0
 
+db:
+  host: localhost
+  port: 5432
+  name: tokenswap
+  user: tokenswap
+  password: password
+
 kafka:
   bootstrap_servers: "localhost:9092"
   acks: "all"

@@ -7,7 +7,9 @@ import (
 
 	"github.com/confluentinc/confluent-kafka-go/kafka"
 	"github.com/murraystewart96/token-swap/internal/config"
+	"github.com/murraystewart96/token-swap/pkg/tracing"
 	"github.com/rs/zerolog/log"
+	"go.opentelemetry.io/otel/propagation"
 )
 
 type IConsumer interface {
@@ -19,14 +21,15 @@ type Consumer struct {
 	client *kafka.Consumer
 }
 
-type EventHandler func(key, value []byte) error
+type EventHandler func(ctx context.Context, key, value []byte) error
 type EventHandlers map[string]EventHandler
 
 func NewConsumer(cfg *config.KafkaConsumer) (*Consumer, error) {
 	client, err := kafka.NewConsumer(&kafka.ConfigMap{
 		"bootstrap.servers": cfg.BootstrapServers,
 		"group.id":          cfg.GroupID,
-		"auto.offset.reset": cfg.OffsetReset})
+		"auto.offset.reset": cfg.OffsetReset,
+	})
 	if err != nil {
 		return nil, fmt.Errorf("Failed to create consumer: %w", err)
 	}
@@ -67,10 +70,29 @@ func (c *Consumer) StartConsuming(ctx context.Context, topicHandlers EventHandle
 				continue
 			}
 
+			log.Info().Msg("consuming event...")
+
 			if handler, ok := topicHandlers[*message.TopicPartition.Topic]; ok {
-				if err := handler(message.Key, message.Value); err != nil {
+				// Extract trace context from message headers
+				propagator := propagation.TraceContext{}
+				msgCtx := propagator.Extract(ctx, NewHeaderCarrier(&message.Headers))
+
+				// Start a span for message processing
+				msgCtx, span := tracing.StartSpan(msgCtx, "kafka.consume")
+				span.SetAttributes(
+					tracing.KafkaAttributes(*message.TopicPartition.Topic, message.TopicPartition.Partition, int64(message.TopicPartition.Offset))...,
+				)
+
+				if err := handler(msgCtx, message.Key, message.Value); err != nil {
 					log.Error().Err(err).Msg("message handler failed")
+				} else {
+					// Commit offset only after successful processing (exactly-once semantics)
+					if _, err := c.client.CommitMessage(message); err != nil {
+						log.Error().Err(err).Msg("failed to commit message offset")
+					}
 				}
+
+				span.End()
 			} else {
 				log.Warn().Msgf("no handler for topic: %s", *message.TopicPartition.Topic)
 			}

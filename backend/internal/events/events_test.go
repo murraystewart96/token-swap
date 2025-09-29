@@ -1,6 +1,7 @@
 package events
 
 import (
+	"context"
 	"encoding/json"
 	"errors"
 	"math/big"
@@ -104,7 +105,7 @@ type ProducedMessage struct {
 	value []byte
 }
 
-func (m *MockProducer) Produce(topic string, key, value []byte) error {
+func (m *MockProducer) Produce(ctx context.Context, topic string, key, value []byte) error {
 	args := m.Called(topic, key, value)
 	if args.Error(0) == nil {
 		m.messages = append(m.messages, ProducedMessage{
@@ -283,7 +284,7 @@ func TestHandleSwapEvent(t *testing.T) {
 			}
 
 			// Execute
-			err := ec.handleSwapEvent(eventLog)
+			err := ec.handleSwapEvent(t.Context(), eventLog)
 
 			// Verify
 			if tt.expectError {
@@ -316,8 +317,6 @@ func TestHandleSwapEvent(t *testing.T) {
 						assert.Equal(t, expected, tradeEvent.AmountIn)
 					case "amount_out":
 						assert.Equal(t, expected, tradeEvent.AmountOut)
-					case "event_type":
-						assert.Equal(t, expected, tradeEvent.EventType)
 					case "block_number":
 						assert.Equal(t, expected, tradeEvent.BlockNumber)
 					}
@@ -411,7 +410,7 @@ func TestHandleSyncEvent(t *testing.T) {
 			}
 
 			// Execute
-			err := ec.handleSyncEvent(eventLog)
+			err := ec.handleSyncEvent(t.Context(), eventLog)
 
 			// Verify
 			if tt.expectError {
@@ -440,8 +439,6 @@ func TestHandleSyncEvent(t *testing.T) {
 						assert.Equal(t, expected, reserveEvent.METReserve)
 					case "you_reserve":
 						assert.Equal(t, expected, reserveEvent.YOUReserve)
-					case "event_type":
-						assert.Equal(t, expected, reserveEvent.EventType)
 					case "block_number":
 						assert.Equal(t, expected, reserveEvent.BlockNumber)
 					}

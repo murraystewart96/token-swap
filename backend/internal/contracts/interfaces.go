@@ -10,13 +10,11 @@ import (
 // PoolContract defines the interface for interacting with the pool contract.
 // This interface contains only the methods we actually use from the generated Pool contract.
 type PoolContract interface {
-	// ParseSwap parses a Swap event from a blockchain log
+	// Event parsing methods
 	ParseSwap(log types.Log) (*PoolSwap, error)
-	
-	// ParseSync parses a Sync event from a blockchain log  
 	ParseSync(log types.Log) (*PoolSync, error)
-	
-	// GetReserves returns the current token reserves from the pool
+
+	// Query methods
 	GetReserves(opts *bind.CallOpts) (struct {
 		MeTokenReserve  *big.Int
 		YouTokenReserve *big.Int

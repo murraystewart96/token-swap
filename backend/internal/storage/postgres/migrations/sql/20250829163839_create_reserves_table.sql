@@ -5,6 +5,7 @@ CREATE TABLE reserves (
     transaction_index INTEGER NOT NULL DEFAULT 0,
     block_number BIGINT NOT NULL,
     confirmed BOOLEAN DEFAULT FALSE,
+    timestamp BIGINT NOT NULL,
     met_reserve NUMERIC(78, 0) NOT NULL,
     you_reserve NUMERIC(78, 0) NOT NULL,
     pool_address VARCHAR(42) NOT NULL,

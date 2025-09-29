@@ -9,11 +9,13 @@ import (
 	"github.com/ethereum/go-ethereum"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/ethclient"
 	"github.com/murraystewart96/token-swap/internal/config"
 	"github.com/murraystewart96/token-swap/internal/contracts"
 	"github.com/murraystewart96/token-swap/internal/kafka"
 	"github.com/murraystewart96/token-swap/internal/models"
+	"github.com/murraystewart96/token-swap/internal/storage"
+	"github.com/murraystewart96/token-swap/pkg/eth"
+	"github.com/murraystewart96/token-swap/pkg/tracing"
 	"github.com/rs/zerolog/log"
 )
 
@@ -22,30 +24,37 @@ var (
 	SyncEventSignature = common.HexToHash("0xcf2aa50876cdfbb541206f89af0ee78d44a2abf8d328e37fa4917f982149848a")
 )
 
+const MAX_RECENT_BLOCKS = 100
+
 type EventClient struct {
-	ethClient    *ethclient.Client
+	ethClient    eth.IClient
 	contractAddr common.Address
 	poolContract contracts.PoolContract
 	producer     kafka.IProducer
+	db           storage.DB
+
+	recentBlocks map[uint64]common.Hash
 }
 
-func NewClient(cfg *config.Listener, producer kafka.IProducer) (*EventClient, error) {
-	client, err := ethclient.Dial(fmt.Sprintf("ws://%s", cfg.RPCUrl))
+func NewClient(cfg *config.Listener, producer kafka.IProducer, db storage.DB) (*EventClient, error) {
+	ethClient, err := eth.NewClient(cfg.RPCUrl)
 	if err != nil {
 		return nil, fmt.Errorf("failed to create eth client: %w", err)
 	}
 
 	contractAddr := common.HexToAddress(cfg.ContractAddr)
-	poolContract, err := contracts.NewPool(contractAddr, client)
+	poolContract, err := contracts.NewPool(contractAddr, ethClient.GetUnderlyingClient())
 	if err != nil {
 		return nil, fmt.Errorf("failed to create pool contract interface: %w", err)
 	}
 
 	return &EventClient{
-		ethClient:    client,
+		ethClient:    ethClient,
 		contractAddr: contractAddr,
 		poolContract: poolContract,
 		producer:     producer,
+		db:           db,
+		recentBlocks: make(map[uint64]common.Hash),
 	}, nil
 }
 
@@ -69,15 +78,26 @@ func (ec *EventClient) Listen(ctx context.Context) error {
 		case err := <-sub.Err():
 			return err
 		case eventLog := <-logs:
+			// Check for chain reorg
+			reorg, err := ec.CheckForChainReorg(ctx, &eventLog)
+			if reorg {
+				log.Info().Msg("Chain was reorganised")
+				if err != nil {
+					log.Error().Err(err).Msgf("failed to rollback events")
+					continue
+				}
+			}
+
+			// Handle events
 			switch eventLog.Topics[0] {
 			case SwapEventSignature:
-				err := ec.handleSwapEvent(&eventLog)
+				err := ec.handleSwapEvent(ctx, &eventLog)
 				if err != nil {
 					log.Error().Err(err).Msg("swap event handler failed")
 				}
 
 			case SyncEventSignature:
-				err := ec.handleSyncEvent(&eventLog)
+				err := ec.handleSyncEvent(ctx, &eventLog)
 				if err != nil {
 					log.Error().Err(err).Msg("sync event handler failed")
 				}
@@ -86,7 +106,16 @@ func (ec *EventClient) Listen(ctx context.Context) error {
 	}
 }
 
-func (ec *EventClient) handleSwapEvent(eventLog *types.Log) error {
+func (ec *EventClient) handleSwapEvent(ctx context.Context, eventLog *types.Log) error {
+	// Start a span for swap event processing
+	ctx, span := tracing.StartSpan(ctx, "events.handleSwapEvent")
+	defer span.End()
+
+	// Add blockchain attributes
+	span.SetAttributes(
+		tracing.BlockchainAttributes(eventLog.BlockNumber, eventLog.TxHash.Hex())...,
+	)
+
 	if swapEvent, err := ec.poolContract.ParseSwap(*eventLog); err == nil {
 		logSwapEvent(swapEvent)
 
@@ -104,7 +133,6 @@ func (ec *EventClient) handleSwapEvent(eventLog *types.Log) error {
 			AmountIn:         amountIn,
 			AmountOut:        amountOut,
 			PoolAddress:      swapEvent.Raw.Address.Hex(),
-			EventType:        "swap",
 		}
 
 		// Convert to JSON and publish
@@ -113,7 +141,9 @@ func (ec *EventClient) handleSwapEvent(eventLog *types.Log) error {
 			return fmt.Errorf("failed to marshal trade event: %w", err)
 		}
 
-		err = ec.producer.Produce(config.TradeHistoryTopic, []byte(tradeEvent.TxHash), tradeEventJSON)
+		log.Info().Str("topic", config.TradeHistoryTopic).Msg("publishing swap event")
+
+		err = ec.producer.Produce(ctx, config.TradeHistoryTopic, []byte(tradeEvent.TxHash), tradeEventJSON)
 		if err != nil {
 			return fmt.Errorf("failed to produce trade event: %w", err)
 		}
@@ -122,17 +152,26 @@ func (ec *EventClient) handleSwapEvent(eventLog *types.Log) error {
 	return nil
 }
 
-func (ec *EventClient) handleSyncEvent(eventLog *types.Log) error {
+func (ec *EventClient) handleSyncEvent(ctx context.Context, eventLog *types.Log) error {
+	// Start a span for sync event processing
+	ctx, span := tracing.StartSpan(ctx, "events.handleSyncEvent")
+	defer span.End()
+
+	// Add blockchain attributes
+	span.SetAttributes(
+		tracing.BlockchainAttributes(eventLog.BlockNumber, eventLog.TxHash.Hex())...,
+	)
+
 	if syncEvent, err := ec.poolContract.ParseSync(*eventLog); err == nil {
 		logSyncEvent(syncEvent)
 
 		reserveEvent := models.ReserveEvent{
 			TxHash:      syncEvent.Raw.TxHash.Hex(),
 			BlockNumber: syncEvent.Raw.BlockNumber,
+			Timestamp:   int64(syncEvent.Raw.BlockTimestamp),
 			METReserve:  syncEvent.MeTokenAmount.String(),
 			YOUReserve:  syncEvent.YouTokenAmount.String(),
 			PoolAddress: syncEvent.Raw.Address.Hex(),
-			EventType:   "sync",
 		}
 
 		// Convert to JSON and publish
@@ -141,7 +180,9 @@ func (ec *EventClient) handleSyncEvent(eventLog *types.Log) error {
 			return fmt.Errorf("failed to marshal reserve event: %w", err)
 		}
 
-		err = ec.producer.Produce(config.ReserveHistoryTopic, []byte(reserveEvent.TxHash), reserveEventJSON)
+		log.Info().Str("topic", config.TradeHistoryTopic).Msg("publishing sync event")
+
+		err = ec.producer.Produce(ctx, config.ReserveHistoryTopic, []byte(reserveEvent.TxHash), reserveEventJSON)
 		if err != nil {
 			return fmt.Errorf("failed to produce reserve event: %w", err)
 		}

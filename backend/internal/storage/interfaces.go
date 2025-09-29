@@ -32,6 +32,8 @@ type DB interface {
 	GetPriceHistory(start, end time.Time, interval time.Duration) (*models.PriceHistoryResponse, error)
 	GetActivityAnalytics(start, end time.Time) (*models.ActivityResponse, error)
 
+	RollbackEvents(blockNumber uint64) error
+
 	// Infrastructure operations
 	Exec(query string) error
 	Close()

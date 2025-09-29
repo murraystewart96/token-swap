@@ -35,6 +35,7 @@ services:
       - "9093:9092"  # Different port from main dev Kafka
     environment:
       KAFKA_NODE_ID: 1
+      KAFKA_CREATE_TOPICS: "trade-history:1:1,reserve-history:1:1"
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: 'CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT'
       KAFKA_ADVERTISED_LISTENERS: 'PLAINTEXT://kafka-test:29092,PLAINTEXT_HOST://localhost:9093'
       KAFKA_LISTENERS: 'PLAINTEXT://kafka-test:29092,CONTROLLER://kafka-test:29093,PLAINTEXT_HOST://0.0.0.0:9092'
@@ -47,8 +48,10 @@ services:
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
       KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
+      KAFKA_LOG_SEGMENT_BYTES: 1073741824  # 1GB segments, fewer flushes
+      KAFKA_COMPRESSION_TYPE: snappy        # or zstd for better throughput
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'true'
-      CLUSTER_ID: 'test-cluster-12345'
+      CLUSTER_ID: 'MkU3OEVBNTcwNTJENDM2Qk'
     healthcheck:
       test: ["CMD-SHELL", "kafka-topics --bootstrap-server localhost:9092 --list"]
       interval: 10s
@@ -57,13 +60,12 @@ services:
 
   # Anvil for local Ethereum testing
   anvil-test:
-    image: ghcr.io/foundry-rs/foundry:latest
-    container_name: anvil-test
+    image: ghcr.io/foundry-rs/foundry
+    container_name: anvil
+    environment:
+      ANVIL_IP_ADDR: "0.0.0.0"
+    working_dir: /anvil
     ports:
-      - "8546:8545"  # Different port from potential main dev node
-    command: anvil --host 0.0.0.0 --accounts 20 --balance 10000
-    healthcheck:
-      test: ["CMD-SHELL", "curl -f http://localhost:8545 || exit 1"]
-      interval: 5s
-      timeout: 5s
-      retries: 5
+      - "8546:8545"
+    command: anvil
+   

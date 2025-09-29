@@ -4,17 +4,15 @@ import (
 	"context"
 	"fmt"
 	"os"
+	"time"
 
-	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethclient"
 	"github.com/murraystewart96/token-swap/internal/config"
-	"github.com/murraystewart96/token-swap/internal/contracts"
 	"github.com/murraystewart96/token-swap/internal/kafka"
 	"github.com/murraystewart96/token-swap/internal/storage"
 	"github.com/murraystewart96/token-swap/internal/storage/postgres"
 	"github.com/murraystewart96/token-swap/internal/storage/redis"
 )
-
 
 // TestInfrastructure connects to running test services
 // Much simpler - we just connect to services started by docker-compose
@@ -24,12 +22,10 @@ type TestInfrastructure struct {
 	KafkaProducer kafka.IProducer
 	KafkaConsumer kafka.IConsumer
 	ETHClient     *ethclient.Client
-	PoolContract  contracts.PoolContract
 }
 
-
-// getEnvWithDefault returns environment variable value or default if not set
-func getEnvWithDefault(key, defaultValue string) string {
+// GetEnvWithDefault returns environment variable value or default if not set
+func GetEnvWithDefault(key, defaultValue string) string {
 	if value := os.Getenv(key); value != "" {
 		return value
 	}
@@ -40,11 +36,11 @@ func getEnvWithDefault(key, defaultValue string) string {
 func SetupTestInfrastructure(ctx context.Context) (*TestInfrastructure, error) {
 	// Connect to PostgreSQL using environment variables
 	dbConfig := &config.DB{
-		Host:     getEnvWithDefault("TEST_DB_HOST", "localhost"),
-		Port:     getEnvWithDefault("TEST_DB_PORT", "5433"),
-		Name:     getEnvWithDefault("TEST_DB_NAME", "tokenswap_test"),
-		User:     getEnvWithDefault("TEST_DB_USER", "test_user"),
-		Password: getEnvWithDefault("TEST_DB_PASSWORD", "test_password"),
+		Host:     GetEnvWithDefault("TEST_DB_HOST", "localhost"),
+		Port:     GetEnvWithDefault("TEST_DB_PORT", "5433"),
+		Name:     GetEnvWithDefault("TEST_DB_NAME", "tokenswap_test"),
+		User:     GetEnvWithDefault("TEST_DB_USER", "test_user"),
+		Password: GetEnvWithDefault("TEST_DB_PASSWORD", "test_password"),
 	}
 	db, err := postgres.NewDB(dbConfig)
 	if err != nil {
@@ -53,14 +49,14 @@ func SetupTestInfrastructure(ctx context.Context) (*TestInfrastructure, error) {
 
 	// Connect to Redis
 	redisConfig := &config.Redis{
-		Addr: getEnvWithDefault("TEST_REDIS_ADDR", "localhost:6380"),
+		Addr: GetEnvWithDefault("TEST_REDIS_ADDR", "localhost:6380"),
 	}
 	poolCache := redis.NewCache(redisConfig)
 
 	// Connect to Kafka producer
 	producerConfig := &config.KafkaProducer{
-		BootstrapServers: getEnvWithDefault("TEST_KAFKA_BROKER", "localhost:9093"),
-		Acks:             getEnvWithDefault("TEST_KAFKA_ACKS", "all"),
+		BootstrapServers: GetEnvWithDefault("TEST_KAFKA_BROKER", "localhost:9093"),
+		Acks:             GetEnvWithDefault("TEST_KAFKA_ACKS", "all"),
 	}
 	producer, err := kafka.NewProducer(producerConfig)
 	if err != nil {
@@ -69,9 +65,9 @@ func SetupTestInfrastructure(ctx context.Context) (*TestInfrastructure, error) {
 
 	// Connect to Kafka consumer
 	consumerConfig := &config.KafkaConsumer{
-		BootstrapServers: getEnvWithDefault("TEST_KAFKA_BROKER", "localhost:9093"),
-		GroupID:          getEnvWithDefault("TEST_KAFKA_GROUP_ID", "test-consumer-group"),
-		OffsetReset:      getEnvWithDefault("TEST_KAFKA_OFFSET_RESET", "earliest"),
+		BootstrapServers: GetEnvWithDefault("TEST_KAFKA_BROKER", "localhost:9093"),
+		GroupID:          fmt.Sprintf("%s-%d", GetEnvWithDefault("TEST_KAFKA_GROUP_ID", "test-consumer-group"), time.Now().UnixNano()),
+		OffsetReset:      GetEnvWithDefault("TEST_KAFKA_OFFSET_RESET", "earliest"),
 	}
 	consumer, err := kafka.NewConsumer(consumerConfig)
 	if err != nil {
@@ -79,23 +75,10 @@ func SetupTestInfrastructure(ctx context.Context) (*TestInfrastructure, error) {
 	}
 
 	// Connect to Ethereum client
-	ethNodeURL := getEnvWithDefault("TEST_ETH_NODE_URL", "http://localhost:8546")
+	ethNodeURL := GetEnvWithDefault("TEST_ETH_NODE_URL", "http://localhost:8546")
 	ethClient, err := ethclient.Dial(ethNodeURL)
 	if err != nil {
 		return nil, fmt.Errorf("failed to connect to ethereum client: %w", err)
-	}
-
-	// Create pool contract interface (will need contract address to be set)
-	var poolContract contracts.PoolContract
-	contractAddr := getEnvWithDefault("TEST_CONTRACT_ADDR", "")
-	if contractAddr != "" {
-		poolContract, err = contracts.NewPool(
-			common.HexToAddress(contractAddr),
-			ethClient,
-		)
-		if err != nil {
-			return nil, fmt.Errorf("failed to create pool contract: %w", err)
-		}
 	}
 
 	infra := &TestInfrastructure{
@@ -104,7 +87,6 @@ func SetupTestInfrastructure(ctx context.Context) (*TestInfrastructure, error) {
 		KafkaProducer: producer,
 		KafkaConsumer: consumer,
 		ETHClient:     ethClient,
-		PoolContract:  poolContract,
 	}
 
 	return infra, nil
@@ -121,9 +103,6 @@ func (ti *TestInfrastructure) Reset() error {
 	if err := ti.resetDatabase(); err != nil {
 		return fmt.Errorf("failed to reset database: %w", err)
 	}
-
-	// Note: We don't reset Kafka topics as it's complex and not usually necessary
-	// Tests can use unique topic names or ignore old messages
 
 	return nil
 }
@@ -142,28 +121,12 @@ func (ti *TestInfrastructure) resetDatabase() error {
 
 // Cleanup closes all service connections
 func (ti *TestInfrastructure) Cleanup() error {
-	var errors []error
-
 	// Close database connection
 	ti.DB.Close()
 
 	// Close Ethereum client (if it has a close method)
 	if ti.ETHClient != nil {
 		ti.ETHClient.Close()
-	}
-
-	// Close Kafka connections (if they have close methods)
-	if err := ti.KafkaProducer.Close(); err != nil {
-		errors = append(errors, fmt.Errorf("failed to close kafka producer: %w", err))
-	}
-
-	if err := ti.KafkaConsumer.Close(); err != nil {
-		errors = append(errors, fmt.Errorf("failed to close kafka consumer: %w", err))
-	}
-
-	// Return first error if any
-	if len(errors) > 0 {
-		return errors[0]
 	}
 
 	return nil

@@ -54,3 +54,32 @@ func (db *DB) Exec(query string) error {
 	_, err := db.pool.Exec(context.Background(), query)
 	return err
 }
+
+func (db *DB) RollbackEvents(blockNumber uint64) error {
+	ctx := context.Background()
+	
+	tx, err := db.pool.Begin(ctx)
+	if err != nil {
+		return fmt.Errorf("failed to begin transaction: %w", err)
+	}
+	defer tx.Rollback(ctx)
+
+	tradesQuery := `DELETE FROM trades WHERE block_number >= $1`
+	_, err = tx.Exec(ctx, tradesQuery, blockNumber)
+	if err != nil {
+		return fmt.Errorf("failed to delete trades: %w", err)
+	}
+
+	reservesQuery := `DELETE FROM reserves WHERE block_number >= $1`
+	_, err = tx.Exec(ctx, reservesQuery, blockNumber)
+	if err != nil {
+		return fmt.Errorf("failed to delete reserves: %w", err)
+	}
+
+	err = tx.Commit(ctx)
+	if err != nil {
+		return fmt.Errorf("failed to commit transaction: %w", err)
+	}
+
+	return nil
+}

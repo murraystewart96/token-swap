@@ -6,73 +6,35 @@ import (
 	"fmt"
 
 	"github.com/murraystewart96/token-swap/internal/models"
+	"github.com/murraystewart96/token-swap/pkg/tracing"
 	"github.com/rs/zerolog/log"
-	"github.com/shopspring/decimal"
 )
 
-const (
-	MET_YOU_PAIR = "MET_YOU"
-)
+func (w *Worker) handleTradeEvent(ctx context.Context, key, value []byte) error {
+	// Start a span for trade event processing
+	ctx, span := tracing.StartSpan(ctx, "worker.handleTradeEvent")
+	defer span.End()
 
-func (w *Worker) handleTradeEvent(key, value []byte) error {
 	tradeEvent := &models.TradeEvent{}
 	if err := json.Unmarshal(value, tradeEvent); err != nil {
 		return fmt.Errorf("failed to unmarshal trade history event: %w", err)
 	}
 
-	currentPrice, err := calculateMetToYouPrice(tradeEvent)
-	if err != nil {
-		return fmt.Errorf("failed to calculate trading price: %w", err)
-	}
+	// Add trade-specific attributes to the span
+	span.SetAttributes(
+		tracing.BlockchainAttributes(tradeEvent.BlockNumber, tradeEvent.TxHash)...,
+	)
 
-	log.Info().Str("MET:YOU", currentPrice).Msg("caching latest price")
+	log.Info().Msg("storing trade in database")
 
-	err = w.poolCache.SetPrice(context.Background(), MET_YOU_PAIR, currentPrice)
-	if err != nil {
-		return fmt.Errorf("failed to update cache with trade price: %w", err)
-	}
+	// Start a span for database operation
+	ctx, dbSpan := tracing.StartSpan(ctx, "db.CreateTrade")
+	defer dbSpan.End()
 
-	log.Info().Msg("storing price in database")
-
-	err = w.db.CreateTrade(tradeEvent)
+	err := w.db.CreateTrade(tradeEvent)
 	if err != nil {
 		return fmt.Errorf("failed to store trade event in database: %w", err)
 	}
 
 	return nil
-}
-
-func calculateMetToYouPrice(tradeEvent *models.TradeEvent) (string, error) {
-	var metAmount, youAmount decimal.Decimal
-	var err error
-
-	if tradeEvent.TokenIn == "MET" {
-		// MET → YOU trade
-		metAmount, err = decimal.NewFromString(tradeEvent.AmountIn)
-		if err != nil {
-			return "", fmt.Errorf("failed to convert string (%s) to decimal: %w", tradeEvent.AmountIn, err)
-		}
-		youAmount, err = decimal.NewFromString(tradeEvent.AmountOut)
-		if err != nil {
-			return "", fmt.Errorf("failed to convert string (%s) to decimal: %w", tradeEvent.AmountOut, err)
-		}
-	} else {
-		// YOU → MET trade - need to flip the calculation
-		metAmount, err = decimal.NewFromString(tradeEvent.AmountOut)
-		if err != nil {
-			return "", fmt.Errorf("failed to convert string (%s) to decimal: %w", tradeEvent.AmountOut, err)
-		}
-		youAmount, err = decimal.NewFromString(tradeEvent.AmountIn)
-		if err != nil {
-			return "", fmt.Errorf("failed to convert string (%s) to decimal: %w", tradeEvent.AmountIn, err)
-		}
-	}
-
-	// Always calculate MET:YOU (YOU per MET)
-	if metAmount.IsZero() {
-		return "", fmt.Errorf("MET amount is 0: can't divide by 0")
-	}
-
-	price := youAmount.Div(metAmount)
-	return price.StringFixed(6), nil
 }

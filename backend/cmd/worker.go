@@ -11,6 +11,7 @@ import (
 	"github.com/murraystewart96/token-swap/internal/storage/postgres"
 	"github.com/murraystewart96/token-swap/internal/storage/redis"
 	"github.com/murraystewart96/token-swap/internal/worker"
+	"github.com/murraystewart96/token-swap/pkg/tracing"
 	"github.com/rs/zerolog/log"
 	"github.com/spf13/cobra"
 )
@@ -29,6 +30,18 @@ func createWorkerCmd() *cobra.Command { //nolint:gocognit
 			}
 			cfg := &config.Worker{}
 			config.ReadEnvironment(configPath, cfg)
+
+			// Initialize tracing
+			tracingConfig := tracing.TracingConfig{
+				ServiceName:  "token-swap-worker",
+				Environment:  "development", // TODO: Make this configurable
+				OTLPEndpoint: "", // Will use default for development
+			}
+			shutdown, err := tracing.InitTracer(tracingConfig)
+			if err != nil {
+				log.Fatal().Err(err).Msg("failed to initialize tracing")
+			}
+			defer shutdown()
 
 			// Worker dependencies
 			consumer, err := kafka.NewConsumer(&cfg.Kafka)

@@ -64,6 +64,11 @@ func (m *DB) GetActivityAnalytics(start, end time.Time) (*models.ActivityRespons
 	return args.Get(0).(*models.ActivityResponse), args.Error(1)
 }
 
+func (m *DB) RollbackEvents(blockNumber uint64) error {
+	args := m.Called(blockNumber)
+	return args.Error(0)
+}
+
 func (m *DB) Close() {
 	m.Called()
 }

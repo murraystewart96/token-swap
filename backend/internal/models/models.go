@@ -19,7 +19,6 @@ type TradeEvent struct {
 
 	// Context
 	PoolAddress string `json:"pool_address"` // Which pool
-	EventType   string `json:"event_type"`   // "swap"
 }
 
 type ReserveEvent struct {
@@ -30,7 +29,6 @@ type ReserveEvent struct {
 	METReserve  string `json:"met_reserve"`
 	YOUReserve  string `json:"you_reserve"`
 	PoolAddress string `json:"pool_address"`
-	EventType   string `json:"event_type"`
 }
 
 type PoolReserves struct {

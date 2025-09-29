@@ -9,12 +9,13 @@ import (
 
 func (db *DB) CreateReserve(reserve *models.ReserveEvent) error {
 	query := `
-        INSERT INTO reserves (tx_hash, block_number, met_reserve, you_reserve, pool_address)
-        VALUES ($1, $2, $3, $4, $5)`
+        INSERT INTO reserves (tx_hash, block_number, timestamp, met_reserve, you_reserve, pool_address)
+        VALUES ($1, $2, $3, $4, $5, $6)`
 
 	_, err := db.pool.Exec(context.Background(), query,
 		reserve.TxHash,
 		reserve.BlockNumber,
+		reserve.Timestamp,
 		reserve.METReserve,
 		reserve.YOUReserve,
 		reserve.PoolAddress)

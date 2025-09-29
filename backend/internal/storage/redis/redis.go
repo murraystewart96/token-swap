@@ -52,7 +52,7 @@ func (c *Cache) GetPrice(ctx context.Context, pair string) (string, error) {
 	value, err := c.client.Get(ctx, key).Result()
 	if err != nil {
 		if err == redis.Nil {
-			return "", fmt.Errorf("price not found for pair %s", pair)
+			return "", fmt.Errorf("price not found for pair %s: %w", pair, err)
 		}
 		return "", fmt.Errorf("failed to get price: %w", err)
 	}
@@ -82,7 +82,7 @@ func (c *Cache) GetReserves(ctx context.Context, poolAddr string) (*models.PoolR
 	value, err := c.client.Get(ctx, key).Result()
 	if err != nil {
 		if err == redis.Nil {
-			return nil, fmt.Errorf("reserves not found")
+			return nil, fmt.Errorf("reserves not found: %w", err)
 		}
 		return nil, fmt.Errorf("failed to get reserves: %w", err)
 	}
