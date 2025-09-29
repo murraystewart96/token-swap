@@ -1,0 +1,200 @@
+<svg viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+     refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+    <pattern id="diagonalHatch" patternUnits="userSpaceOnUse" width="4" height="4">
+      <path d="M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2" stroke="#e0e0e0" stroke-width="1"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="900" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="600" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50">Token Swap DApp Architecture</text>
+  
+  <!-- Blockchain Layer -->
+  <rect x="50" y="60" width="1100" height="120" fill="#e8f4fd" stroke="#3498db" stroke-width="2" rx="5"/>
+  <text x="70" y="85" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">Ethereum Blockchain</text>
+  
+  <!-- Smart Contracts -->
+  <rect x="80" y="100" width="150" height="60" fill="#3498db" stroke="#2980b9" stroke-width="2" rx="5"/>
+  <text x="155" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Token Swap</text>
+  <text x="155" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Contract</text>
+  
+  <rect x="250" y="100" width="120" height="60" fill="#3498db" stroke="#2980b9" stroke-width="2" rx="5"/>
+  <text x="310" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">ERC-20</text>
+  <text x="310" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Tokens</text>
+  
+  <rect x="390" y="100" width="120" height="60" fill="#3498db" stroke="#2980b9" stroke-width="2" rx="5"/>
+  <text x="450" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Liquidity</text>
+  <text x="450" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Pools</text>
+  
+  <!-- Event Stream -->
+  <text x="600" y="125" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">Blockchain Events:</text>
+  <text x="600" y="145" font-family="Arial, sans-serif" font-size="11" fill="#7f8c8d">Swap, AddLiquidity, RemoveLiquidity</text>
+  
+  <!-- Backend Services Layer -->
+  <rect x="50" y="220" width="1100" height="300" fill="#f0f8f0" stroke="#27ae60" stroke-width="2" rx="5"/>
+  <text x="70" y="245" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">Go Backend Services</text>
+  
+  <!-- Event Listener Service -->
+  <rect x="80" y="260" width="160" height="80" fill="#27ae60" stroke="#229954" stroke-width="2" rx="5"/>
+  <text x="160" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Event Listener</text>
+  <text x="160" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Service</text>
+  <text x="160" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">go-ethereum</text>
+  
+  <!-- Kafka Message Queue -->
+  <rect x="280" y="260" width="160" height="80" fill="#e74c3c" stroke="#c0392b" stroke-width="2" rx="5"/>
+  <text x="360" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Apache Kafka</text>
+  <text x="360" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Topics:</text>
+  <text x="360" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">swap-events, price-updates</text>
+  
+  <!-- Processing Services -->
+  <rect x="480" y="260" width="140" height="80" fill="#f39c12" stroke="#e67e22" stroke-width="2" rx="5"/>
+  <text x="550" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Transaction</text>
+  <text x="550" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Processor</text>
+  
+  <rect x="640" y="260" width="140" height="80" fill="#f39c12" stroke="#e67e22" stroke-width="2" rx="5"/>
+  <text x="710" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Price</text>
+  <text x="710" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Calculator</text>
+  
+  <rect x="800" y="260" width="140" height="80" fill="#f39c12" stroke="#e67e22" stroke-width="2" rx="5"/>
+  <text x="870" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Portfolio</text>
+  <text x="870" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Service</text>
+  
+  <!-- REST API -->
+  <rect x="980" y="260" width="140" height="80" fill="#9b59b6" stroke="#8e44ad" stroke-width="2" rx="5"/>
+  <text x="1050" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">REST API</text>
+  <text x="1050" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Gin/Echo</text>
+  <text x="1050" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Rate Limiting</text>
+  
+  <!-- Database Services -->
+  <rect x="80" y="370" width="200" height="80" fill="#34495e" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="180" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">PostgreSQL</text>
+  <text x="180" y="415" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Users, Transactions,</text>
+  <text x="180" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Pools, Historical Data</text>
+  
+  <!-- Cache -->
+  <rect x="320" y="370" width="140" height="80" fill="#e67e22" stroke="#d35400" stroke-width="2" rx="5"/>
+  <text x="390" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Redis Cache</text>
+  <text x="390" y="415" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Price Data</text>
+  <text x="390" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">User Sessions</text>
+  
+  <!-- Monitoring -->
+  <rect x="500" y="370" width="280" height="80" fill="#95a5a6" stroke="#7f8c8d" stroke-width="2" rx="5"/>
+  <text x="640" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Monitoring & Logging</text>
+  <text x="580" y="415" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Prometheus</text>
+  <text x="640" y="415" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Grafana</text>
+  <text x="700" y="415" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Structured Logs</text>
+  
+  <!-- External APIs -->
+  <rect x="820" y="370" width="300" height="80" fill="#16a085" stroke="#138d75" stroke-width="2" rx="5"/>
+  <text x="970" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">External Integrations</text>
+  <text x="900" y="415" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Price Oracles</text>
+  <text x="1000" y="415" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Gas Price APIs</text>
+  <text x="950" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Ethereum RPC Endpoints</text>
+  
+  <!-- Frontend Layer -->
+  <rect x="50" y="560" width="1100" height="120" fill="#fef9e7" stroke="#f1c40f" stroke-width="2" rx="5"/>
+  <text x="70" y="585" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">Frontend Application</text>
+  
+  <!-- React App -->
+  <rect x="80" y="600" width="160" height="60" fill="#61dafb" stroke="#0088cc" stroke-width="2" rx="5"/>
+  <text x="160" y="625" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">React App</text>
+  <text x="160" y="645" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">TypeScript</text>
+  
+  <!-- Web3 Integration -->
+  <rect x="260" y="600" width="160" height="60" fill="#f16822" stroke="#e55a1c" stroke-width="2" rx="5"/>
+  <text x="340" y="625" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Web3 Integration</text>
+  <text x="340" y="645" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">MetaMask, WalletConnect</text>
+  
+  <!-- UI Components -->
+  <rect x="440" y="600" width="160" height="60" fill="#8e44ad" stroke="#7d3c98" stroke-width="2" rx="5"/>
+  <text x="520" y="620" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">Swap Interface</text>
+  <text x="520" y="635" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">Liquidity Pools</text>
+  <text x="520" y="650" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">Portfolio View</text>
+  
+  <!-- Real-time Updates -->
+  <rect x="620" y="600" width="160" height="60" fill="#e74c3c" stroke="#c0392b" stroke-width="2" rx="5"/>
+  <text x="700" y="625" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Real-time Updates</text>
+  <text x="700" y="645" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">WebSocket/SSE</text>
+  
+  <!-- Infrastructure -->
+  <rect x="50" y="720" width="1100" height="120" fill="#ecf0f1" stroke="#95a5a6" stroke-width="2" rx="5"/>
+  <text x="70" y="745" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">Infrastructure & DevOps</text>
+  
+  <!-- Docker -->
+  <rect x="80" y="760" width="120" height="60" fill="#0db7ed" stroke="#0a9fd8" stroke-width="2" rx="5"/>
+  <text x="140" y="785" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Docker</text>
+  <text x="140" y="800" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Containers</text>
+  
+  <!-- CI/CD -->
+  <rect x="220" y="760" width="140" height="60" fill="#2088d0" stroke="#1a6fa8" stroke-width="2" rx="5"/>
+  <text x="290" y="785" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">CI/CD Pipeline</text>
+  <text x="290" y="800" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">GitHub Actions</text>
+  
+  <!-- Cloud -->
+  <rect x="380" y="760" width="140" height="60" fill="#ff9900" stroke="#cc7a00" stroke-width="2" rx="5"/>
+  <text x="450" y="785" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Cloud Platform</text>
+  <text x="450" y="800" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">AWS/GCP</text>
+  
+  <!-- Load Balancer -->
+  <rect x="540" y="760" width="140" height="60" fill="#28a745" stroke="#1e7e34" stroke-width="2" rx="5"/>
+  <text x="610" y="785" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Load Balancer</text>
+  <text x="610" y="800" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">NGINX/ALB</text>
+  
+  <!-- Security -->
+  <rect x="700" y="760" width="140" height="60" fill="#dc3545" stroke="#a71e2a" stroke-width="2" rx="5"/>
+  <text x="770" y="785" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Security</text>
+  <text x="770" y="800" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">SSL, WAF, Secrets</text>
+  
+  <!-- Auto-scaling -->
+  <rect x="860" y="760" width="140" height="60" fill="#6f42c1" stroke="#5a2d91" stroke-width="2" rx="5"/>
+  <text x="930" y="785" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Auto-scaling</text>
+  <text x="930" y="800" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Kubernetes</text>
+  
+  <!-- Arrows and Data Flow -->
+  <!-- Blockchain to Event Listener -->
+  <line x1="155" y1="160" x2="160" y2="260" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Event Listener to Kafka -->
+  <line x1="240" y1="300" x2="280" y2="300" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Kafka to Processing Services -->
+  <line x1="440" y1="300" x2="480" y2="300" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="400" y1="320" x2="640" y2="280" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="400" y1="320" x2="800" y2="280" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Processing Services to Database -->
+  <line x1="550" y1="340" x2="200" y2="370" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="710" y1="340" x2="200" y2="370" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="870" y1="340" x2="200" y2="370" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Services to Cache -->
+  <line x1="710" y1="340" x2="390" y2="370" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- API to Frontend -->
+  <line x1="1050" y1="340" x2="1050" y2="560" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="1050" y1="560" x2="520" y2="600" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Frontend to Blockchain (via Web3) -->
+  <line x1="340" y1="600" x2="340" y2="180" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" stroke-dasharray="5,5"/>
+  
+  <!-- Data Flow Labels -->
+  <text x="200" y="220" font-family="Arial, sans-serif" font-size="10" fill="#7f8c8d">Events</text>
+  <text x="260" y="315" font-family="Arial, sans-serif" font-size="10" fill="#7f8c8d">Publish</text>
+  <text x="460" y="315" font-family="Arial, sans-serif" font-size="10" fill="#7f8c8d">Consume</text>
+  <text x="1060" y="450" font-family="Arial, sans-serif" font-size="10" fill="#7f8c8d">HTTP/REST</text>
+  <text x="350" y="400" font-family="Arial, sans-serif" font-size="10" fill="#7f8c8d">Direct Tx</text>
+  
+  <!-- Legend -->
+  <rect x="870" y="850" width="300" height="40" fill="white" stroke="#bdc3c7" stroke-width="1" rx="3"/>
+  <text x="880" y="870" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2c3e50">Data Flow:</text>
+  <line x1="950" y1="865" x2="970" y2="865" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="975" y="870" font-family="Arial, sans-serif" font-size="10" fill="#7f8c8d">Async Events</text>
+  <line x1="1050" y1="865" x2="1070" y2="865" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" stroke-dasharray="3,3"/>
+  <text x="1075" y="870" font-family="Arial, sans-serif" font-size="10" fill="#7f8c8d">Direct Calls</text>
+</svg>

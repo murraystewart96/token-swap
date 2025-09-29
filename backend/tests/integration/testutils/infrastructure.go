@@ -8,7 +8,7 @@ import (
 
 	"github.com/ethereum/go-ethereum/ethclient"
 	"github.com/murraystewart96/token-swap/internal/config"
-	"github.com/murraystewart96/token-swap/internal/kafka"
+	"github.com/murraystewart96/token-swap/pkg/kafka"
 	"github.com/murraystewart96/token-swap/internal/storage"
 	"github.com/murraystewart96/token-swap/internal/storage/postgres"
 	"github.com/murraystewart96/token-swap/internal/storage/redis"

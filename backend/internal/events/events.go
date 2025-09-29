@@ -11,7 +11,7 @@ import (
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/murraystewart96/token-swap/internal/config"
 	"github.com/murraystewart96/token-swap/internal/contracts"
-	"github.com/murraystewart96/token-swap/internal/kafka"
+	"github.com/murraystewart96/token-swap/pkg/kafka"
 	"github.com/murraystewart96/token-swap/internal/models"
 	"github.com/murraystewart96/token-swap/internal/storage"
 	"github.com/murraystewart96/token-swap/pkg/eth"

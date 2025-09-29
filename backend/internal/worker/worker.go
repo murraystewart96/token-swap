@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 	"github.com/murraystewart96/token-swap/internal/config"
-	"github.com/murraystewart96/token-swap/internal/kafka"
+	"github.com/murraystewart96/token-swap/pkg/kafka"
 	"github.com/murraystewart96/token-swap/internal/storage"
 	"github.com/rs/zerolog/log"
 )
